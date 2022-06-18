@@ -1,12 +1,15 @@
 import React from 'react'
 import Header from '../../components/Header'
+import ErrorBoundary from '../../components/ErrorBoundary'
 
 const Home = () => {
   return (
     <div>
+      <ErrorBoundary>
         <Header />
-        {/* Dashboard */}
-        {/* Footer */}
+      </ErrorBoundary>
+      {/* Dashboard */}
+      {/* Footer */}
     </div>
   )
 }
