@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import styles from './index.module.scss'
+//TODO risolvere lo stile
+//import styles from './index.module.scss' 
 const Header = () => {
   return (
     <header>
