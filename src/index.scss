@@ -1,0 +1,29 @@
+@use "./style/" as *;
+
+/* ---- General Style ---- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  //font-family: $font-family;
+  background-color: $primary-color;
+}
