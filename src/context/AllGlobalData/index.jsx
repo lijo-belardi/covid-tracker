@@ -13,7 +13,7 @@ export const AllGlobalDataProvider = (props) => {
 
     const getGlobalData = async () => {
         try {
-            const response = await apiClient.get('/v3/covid-19/all')
+            const response = await apiClient.get('/v3/covid-19/all?allowNull=0')
             if (!(Object.entries(response).length === 0)) {
                 setGlobalData(response.data)
             }
