@@ -1,13 +1,15 @@
-import { GlobalDataProvider } from './context/globalDataContext'
 import Home from "./pages/Home";
+import { AllGlobalDataProvider } from "./context/AllGlobalData";
 
 function App() {
   return (
-    <GlobalDataProvider>
-      <div className="App">
-        <Home />
-      </div>
-    </GlobalDataProvider>
+
+      <AllGlobalDataProvider>
+        <div className="App">
+          <Home />
+        </div>
+      </AllGlobalDataProvider>
+
   );
 }
 
