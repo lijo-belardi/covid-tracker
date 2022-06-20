@@ -15,7 +15,9 @@ const AllDataSection = () => {
 
     return (
         <Container className={styles.globalDataContainer}>
-            <Typography variant='h3' align='center'>Covid - global situation</Typography>
+            <Typography variant='h3' align='center'>
+                Covid - global situation
+            </Typography>
 
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={4}>

@@ -5,3 +5,12 @@
     margin-top: 2rem;
     border: 2px solid $tertiary-color;
 }
+
+
+@media (max-width: 600px) {
+    .card {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+    
+}

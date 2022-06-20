@@ -8,8 +8,8 @@ const CardInfo = (props) => {
     return (
         <Card className={styles.card}>
             <Typography variant='h5'> {props.title}</Typography>
-            <p>Total: {props.data}</p>
-            <p>Today: {props.todayData}</p>
+            <Typography>Total: {props.data}</Typography>
+            <Typography>Today: {props.todayData}</Typography>
         </Card>
     )
 }
