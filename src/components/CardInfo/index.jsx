@@ -5,7 +5,6 @@ import { Typography, Card } from '@mui/material'
 import styles from './index.module.scss'
 
 const CardInfo = (props) => {
-    console.log(props);
     return (
         <Card className={styles.card}>
             <Typography variant='h5'> {props.title}</Typography>
