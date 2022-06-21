@@ -1,14 +1,23 @@
+// React
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// Pages
 import Home from "./pages/Home";
+import Country from './pages/Country';
+// Contexts
 import { AllGlobalDataProvider } from "./context/AllGlobalData";
 
 function App() {
   return (
-
-      <AllGlobalDataProvider>
+    <AllGlobalDataProvider>
+      <Router>
         <div className="App">
-          <Home />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/countries/:country' element={<Country />} />
+          </Routes>
         </div>
-      </AllGlobalDataProvider>
+      </Router>
+    </AllGlobalDataProvider>
 
   );
 }

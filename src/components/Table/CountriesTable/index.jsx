@@ -1,6 +1,6 @@
 // React
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom'
 
 
 // MUI Table
@@ -34,7 +34,7 @@ const CountriesTable = () => {
     }
 
     return (
-        <div> 
+        <div>
             {/* TODO migliorare generalmente la tabella
             - vedere sistema di paginazione.
             */}
@@ -57,7 +57,9 @@ const CountriesTable = () => {
                             >
                                 <TableCell component="th" scope="row">
                                     {/* TODO riguardare per aggiungere il Link */}
+                                    <Link to={`/countries/${country.country}`}>
                                     {country.country}
+                                    </Link>
                                 </TableCell>
                                 <TableCell align="center">
                                     {/* TODO valutare se fare Context per le bandiere con localStorage */}
