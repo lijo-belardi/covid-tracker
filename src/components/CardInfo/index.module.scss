@@ -1,9 +1,9 @@
 @use "../../style/" as *;
 
 .card {
-    padding: 10px;
+    padding: 1rem;
     margin-top: 2rem;
-    border: 2px solid $tertiary-color;
+    border: 0.125rem solid $tertiary-color;
 }
 
 
@@ -11,6 +11,5 @@
     .card {
         margin-right: 3.75rem;
         margin-left: 3.75rem;
-    }
-    
+    }  
 }
