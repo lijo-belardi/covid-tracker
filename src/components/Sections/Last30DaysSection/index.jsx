@@ -1,7 +1,7 @@
 import React from 'react'
 // My components
-import LineChartAllLast30DaysCases from '../Chart/LineChart/Last30Days/Cases'
-import LineChartAllLast30DaysDeaths from '../Chart/LineChart/Last30Days/Deaths'
+import LineChartAllLast30DaysCases from '../../Chart/LineChart/Last30Days/Cases'
+import LineChartAllLast30DaysDeaths from '../../Chart/LineChart/Last30Days/Deaths'
 
 // Mui components
 import { Container, Typography, Grid, Card } from '@mui/material'

@@ -1,9 +1,9 @@
 // React
 import React, { useContext } from 'react'
 // Contexts
-import { AllGlobalDataContext } from '../../context/AllGlobalData'
+import { AllGlobalDataContext } from '../../../context/AllGlobalData'
 // My components
-import CardInfo from '../CardInfo'
+import CardInfo from '../../CardInfo'
 // Mui components
 import { Container, Typography, Grid } from '@mui/material'
 // Style

@@ -1,7 +1,7 @@
+// React
 import React from 'react'
-
 // My components
-import ContinentsBarChart from '../Chart/BarChart/Continents'
+import ContinentsBarChart from '../../Chart/BarChart/Continents'
 // Mui components
 import { Container, Typography, Grid, Card } from '@mui/material'
 // Style
