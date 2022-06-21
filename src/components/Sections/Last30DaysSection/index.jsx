@@ -17,12 +17,14 @@ const Last30DaysSection = () => {
             {/* TODO testare responsività */}
             <Grid container spacing={4}>
                 <Grid item lg={12}>
-                    <Card>
+                    <Card className={styles.continentsCard}>
+                        <Typography variant='h3'>Cases</Typography>
                         <LineChartAllLast30DaysCases />
                     </Card>
                 </Grid>
                 <Grid item lg={12}>
-                    <Card>
+                    <Card className={styles.continentsCard}>
+                        <Typography variant='h3'>Deaths</Typography>
                         <LineChartAllLast30DaysDeaths />
                     </Card>
                 </Grid>
