@@ -29,7 +29,8 @@ const ContinentsTable = () => {
                             <tr key={continent.continent}>
                                 <td>{continent.continent}</td> {/* TODO aggiungere i Link */}
                                 <td>{continent.deaths}</td>
-                            </tr>)
+                            </tr>
+                        )
                     })}
                 </tbody>
             </table>

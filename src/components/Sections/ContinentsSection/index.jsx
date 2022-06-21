@@ -17,10 +17,16 @@ const ContinentsSection = () => {
             <Grid container spacing={2}>
                 <Grid item lg={4}>
                     {/* Table */}
+                    {/* TODO risolvere questo problema:
+                    validateDOMNesting(...): 
+                    Whitespace text nodes cannot appear as a child of <tr>. 
+                    Make sure you don't have any extra whitespace between 
+                    tags on each line of your source code. */}
+                    
                     {/* TODO migliorare graficamente */}
-                    <Card>
+                    {/* <Card>
                         <ContinentsTable />
-                    </Card>
+                    </Card> */}
                 </Grid>
                 <Grid item lg={8}>
                     {/*  BarChart */}
