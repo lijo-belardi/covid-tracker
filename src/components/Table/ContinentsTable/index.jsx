@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 // Others import
 import apiClient from '../../../apiClient'
 
-const Continents = () => {
+const ContinentsTable = () => {
     const [continentsData, setContinentsData] = useState([])
 
     useEffect(() => {
@@ -37,4 +37,4 @@ const Continents = () => {
     )
 }
 
-export default Continents
+export default ContinentsTable

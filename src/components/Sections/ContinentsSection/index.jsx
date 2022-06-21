@@ -2,7 +2,7 @@
 import React from 'react'
 // My components
 import ContinentsBarChart from '../../Chart/BarChart/Continents'
-import Continents from '../../Table/ContinentsTable'
+import ContinentsTable from '../../Table/ContinentsTable'
 // Mui components
 import { Container, Typography, Grid, Card } from '@mui/material'
 // Style
@@ -19,7 +19,7 @@ const ContinentsSection = () => {
                     {/* Table */}
                     {/* TODO migliorare graficamente */}
                     <Card>
-                        <Continents />
+                        <ContinentsTable />
                     </Card>
                 </Grid>
                 <Grid item lg={8}>
