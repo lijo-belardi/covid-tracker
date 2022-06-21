@@ -4,6 +4,7 @@ import ErrorBoundary from '../../components/ErrorBoundary'
 import AllDataSection from '../../components/Sections/AllDataSection'
 import ContinentsSection from '../../components/Sections/ContinentsSection'
 import Last30DaysSection from '../../components/Sections/Last30DaysSection'
+import AllCountries from '../../components/Sections/AllCountries'
 
 const Home = () => {
   return (
@@ -27,8 +28,11 @@ const Home = () => {
         <Last30DaysSection />
       </ErrorBoundary>
 
-      {/* TODO tabella con tutti gli stati */}
+      <ErrorBoundary>
+        <AllCountries />
+      </ErrorBoundary>
 
+      
       {/* TODO Footer */}
 
     </div>
