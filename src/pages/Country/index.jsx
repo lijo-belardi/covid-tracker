@@ -40,20 +40,34 @@ const Country = () => {
             <Container>
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={4}>
-                        <CardInfo title='Cases' data={country.cases} todayData={country.todayCases} />
+                        <CardInfo
+                            title='Cases'
+                            data={country.cases}
+                            todayData={country.todayCases} />
                     </Grid>
+
                     <Grid item xs={12} sm={4}>
-                        <CardInfo title='Deaths' data={country.deaths} todayData={country.todayDeaths} />
+                        <CardInfo
+                            title='Deaths'
+                            data={country.deaths}
+                            todayData={country.todayDeaths} />
                     </Grid>
+
                     <Grid item xs={12} sm={4}>
-                        <CardInfo title='Recovered' data={country.recovered} todayData={country.todayRecovered} />
+                        <CardInfo
+                            title='Recovered'
+                            data={country.recovered}
+                            todayData={country.todayRecovered} />
                     </Grid>
                 </Grid>
             </Container>
 
             <Container className={styles.otherInfo}>
                 <Card className={styles.otherInfoCard}>
-                    <Typography variant='h4'>Other Information</Typography>
+                    <Typography variant='h4'>
+                        Other Information
+                    </Typography>
+
                     <Typography variant='h6'>
                         Continent: {country.continent}
                     </Typography>
@@ -64,6 +78,9 @@ const Country = () => {
                 </Card>
             </Container>
 
+            <Container>
+                {/* TODO LineChart last30days (cases + deaths) */}
+            </Container>
         </div>
     )
 }
