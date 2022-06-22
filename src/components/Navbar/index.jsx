@@ -35,5 +35,6 @@ const Navbar = () => {
 }
 
 /* TODO risolvere Navbar */
+/* TODO fare campo search */
 
 export default Navbar
