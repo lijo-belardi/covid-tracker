@@ -1,7 +1,10 @@
+// React
 import React from 'react'
-import styles from './index.module.scss'
+import { NavLink } from 'react-router-dom'
+// MUI Components
 import { AppBar, Container, Toolbar, Typography } from '@mui/material'
-
+// Styles
+import styles from './index.module.scss'
 
 const Navbar = () => {
     return (
@@ -9,16 +12,21 @@ const Navbar = () => {
             <AppBar className={styles.Navbar}>
                 <Toolbar className={styles.Toolbar}>
                     <Typography variant='h6'>
-                        Covid - tracker
+                        <NavLink to={'/'}>Covid - tracker</NavLink>
                     </Typography>
 
                     <Typography variant='h6'>
-                        USA
+                    <NavLink to={'/continents'}>Continents</NavLink>
                     </Typography>
 
                     <Typography variant='h6'>
-                        Continents 
+                        <NavLink to={'/countries/usa'}>USA</NavLink>
                     </Typography>
+
+                    <Typography variant='h6'>
+                        <NavLink to={'/countries/italy'}>Italy</NavLink>
+                    </Typography>
+
                 </Toolbar>
             </AppBar>
         </Container>
