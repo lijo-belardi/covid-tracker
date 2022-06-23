@@ -17,7 +17,7 @@ const Country = () => {
     const [country, setCountry] = useState([])
 
     useEffect(() => {
-        async function getCountryDetails(){
+        async function getCountryDetails() {
             try {
                 const response = await apiClient.get(`/v3/covid-19/countries/${params.country}?strict=true`)
                 //console.log( response.data);
@@ -35,6 +35,22 @@ const Country = () => {
             <Header />
             <Container className={styles.titleContainer}>
                 <Typography variant='h3'>{country.country} - Covid Situation</Typography>
+            </Container>
+
+            <Container className={styles.otherInfo}>
+                <Card className={styles.otherInfoCard}>
+                    <Typography variant='h4'>
+                        Information
+                    </Typography>
+
+                    <Typography variant='h6'>
+                        Continent: {country.continent} {/* TODO link alla pagina del continente */}
+                    </Typography>
+
+                    <Typography variant='h6'>
+                        Population: {country.population}
+                    </Typography>
+                </Card>
             </Container>
 
             <Container>
@@ -62,22 +78,8 @@ const Country = () => {
                 </Grid>
             </Container>
 
-            <Container className={styles.otherInfo}>
-                <Card className={styles.otherInfoCard}>
-                    <Typography variant='h4'>
-                        Other Information
-                    </Typography>
 
-                    <Typography variant='h6'>
-                        Continent: {country.continent}
-                    </Typography>
 
-                    <Typography variant='h6'>
-                        Population: {country.population}
-                    </Typography>
-                </Card>
-            </Container>
-   
 
             <Container>
                 {/* TODO LineChart last30days (cases + deaths) */}
