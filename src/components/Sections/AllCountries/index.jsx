@@ -11,7 +11,7 @@ const AllCountries = () => {
     return (
         <Container className={styles.AllCoutriesContainer}>
             <Typography variant='h3' align='center'>
-                AllCoutries
+                All Countries
             </Typography>
 
             <CountriesTable />
