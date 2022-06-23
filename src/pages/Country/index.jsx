@@ -17,18 +17,18 @@ const Country = () => {
     const [country, setCountry] = useState([])
 
     useEffect(() => {
+        async function getCountryDetails(){
+            try {
+                const response = await apiClient.get(`/v3/covid-19/countries/${params.country}?strict=true`)
+                //console.log( response.data);
+                setCountry(response.data)
+            } catch (error) {
+                logErrors(error)
+            }
+        }
         getCountryDetails()
     }, [params.country])
 
-    const getCountryDetails = async () => {
-        try {
-            const response = await apiClient.get(`/v3/covid-19/countries/${params.country}?strict=true`)
-            console.log(response.data);
-            setCountry(response.data)
-        } catch (error) {
-            logErrors(error)
-        }
-    }
 
     return (
         <div>
@@ -77,6 +77,7 @@ const Country = () => {
                     </Typography>
                 </Card>
             </Container>
+   
 
             <Container>
                 {/* TODO LineChart last30days (cases + deaths) */}
