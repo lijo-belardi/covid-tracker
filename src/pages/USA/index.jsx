@@ -46,6 +46,7 @@ const USAPage = () => {
               todayData={country.todayRecovered} />
           </Grid>
         </Grid>}
+        {loading && <h1>Loading</h1>} {/* TODO migliorare */}
       </Container>
     </div>
   )
