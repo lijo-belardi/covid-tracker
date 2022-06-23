@@ -9,6 +9,7 @@ ChartJS.register(
     LinearScale
 )
 
+/* TODO risolvere problema "undefined" */
 const ContinentsBarChart = () => {
     const [continentsData, setContinentsData] = useState([])
 
