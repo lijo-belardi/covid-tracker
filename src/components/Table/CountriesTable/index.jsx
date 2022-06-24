@@ -40,7 +40,7 @@ const CountriesTable = () => {
             */}
 
             <TableContainer component={Paper}>
-                <Table align='center' sx={{ maxWidth: 650 }} aria-label="simple table">
+                <Table align='center' aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Country</TableCell>
