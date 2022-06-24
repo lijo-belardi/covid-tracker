@@ -34,7 +34,6 @@ const LineChartUSALast30DaysCases = () => {
             try {
                 const response = await apiClient.get(requests.usaLast30Days)
                 setCases(response.data.timeline.cases)
-                console.log(response.data.timeline.cases)
             } catch (error) {
                 logErrors(error)
             }

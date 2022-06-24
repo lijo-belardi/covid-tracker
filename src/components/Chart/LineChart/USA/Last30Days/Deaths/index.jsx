@@ -34,7 +34,6 @@ const LineChartUSALast30DaysDeaths = () => {
             try {
                 const response = await apiClient.get(requests.usaLast30Days)
                 setDeaths(response.data.timeline.deaths)
-                console.log(response.data.timeline.deaths)
             } catch (error) {
                 logErrors(error)
             }
