@@ -1,20 +1,24 @@
 // React
 import React from 'react'
 // My Components
+import ErrorBoundary from '../../components/ErrorBoundary'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
+import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
+import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
 // MUI Components
-import { Container, Grid } from '@mui/material'
+import { Container, Grid, Typography, Card } from '@mui/material'
 // Others import
 import useApiClient from '../../hooks/useApiClient'
 import requests from '../../apiClient/requests'
 // Styles
 import styles from './index.module.scss'
 import millify from 'millify'
+import { Line } from 'react-chartjs-2'
 
 const USAPage = () => {
   const { data: country, loading, error } = useApiClient(requests.usaData)
-  console.log(country);
+  //console.log(country);
   return (
     /* TODO aggiungere Typograhy */
     <div>
@@ -47,6 +51,27 @@ const USAPage = () => {
           </Grid>
         </Grid>}
         {loading && <h1>Loading</h1>} {/* TODO migliorare */}
+      </Container>
+
+      <Container> {/* TODO migliorare graficamente */}
+        <ErrorBoundary>
+          <Typography variant='h3'>Last 30 Days</Typography>
+          <Card>
+            <Typography variant='h4'>Cases</Typography>
+            <LineChartUSALast30DaysCases />
+          </Card>
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+          <Card>
+            <Typography variant='h4'>Deaths</Typography>
+            <LineChartUSALast30DaysDeaths />
+          </Card>
+        </ErrorBoundary>
+      </Container>
+
+      <Container>
+        
       </Container>
     </div>
   )
