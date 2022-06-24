@@ -4,8 +4,8 @@ import React from 'react'
 import ErrorBoundary from '../../components/ErrorBoundary'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
-import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
-import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
+import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/Usa/Last30Days/Cases'
+import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/Usa/Last30Days/Deaths'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
 
 // MUI Components
