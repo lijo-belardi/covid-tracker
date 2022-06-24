@@ -15,6 +15,7 @@ import Paper from '@mui/material/Paper';
 // Others import
 import apiClient from '../../../apiClient';
 import logErrors from '../../../utility/consoleShortcuts'
+import requests from '../../../apiClient/requests';
 
 
 const CountriesTable = () => {
@@ -25,7 +26,7 @@ const CountriesTable = () => {
 
     const getData = async () => {
         try {
-            const response = await apiClient.get('/v3/covid-19/countries?sort=cases')
+            const response = await apiClient.get(requests.countriesCases) 
             seCountries(response.data)
         } catch (error) {
             logErrors(error)
