@@ -6,6 +6,8 @@ import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
 import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
+import UsaStatesTable from '../../components/Table/UsaStatesTable'
+
 // MUI Components
 import { Container, Grid, Typography, Card } from '@mui/material'
 // Others import
@@ -53,6 +55,7 @@ const USAPage = () => {
         {loading && <h1>Loading</h1>} {/* TODO migliorare */}
       </Container>
 
+      {/*  Last 30 days - LineCharts */}
       <Container> {/* TODO migliorare graficamente */}
         <ErrorBoundary>
           <Typography variant='h3'>Last 30 Days</Typography>
@@ -70,8 +73,13 @@ const USAPage = () => {
         </ErrorBoundary>
       </Container>
 
+      {/*  USA - countries's table */}
       <Container>
-        
+        <Card>
+          <ErrorBoundary>
+            <UsaStatesTable />
+          </ErrorBoundary>
+        </Card>
       </Container>
     </div>
   )

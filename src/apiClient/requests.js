@@ -4,7 +4,8 @@ const requests = {
     countriesCases: '/v3/covid-19/countries?sort=cases',
     usaData: '/v3/covid-19/countries/usa?strict=true',
     last30DaysData: '/v3/covid-19/historical/all?lastdays=30',
-    usaLast30Days: '/v3/covid-19/historical/usa?lastdays=30'
+    usaLast30Days: '/v3/covid-19/historical/usa?lastdays=30',
+    usaStates: '/v3/covid-19/states?sort=cases'
 }
 export default requests
 
