@@ -1,6 +1,5 @@
 // React 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 // Mui Components
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,20 +15,17 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 // Others imports
 import styles from './index.module.scss'
+import menuItems from './menuItems';
+import HandleMenuClick from './HandleMenuClick';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate()
+  const { navigate } = HandleMenuClick()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClick = (pageURL) => {
-    navigate(pageURL)
   };
 
   return (
@@ -41,11 +37,11 @@ const Header = () => {
             component="div"
             sx={{
               [theme.breakpoints.down('sm')]: {
-                flexGrow: 1 
+                flexGrow: 1
               }
             }}
           >
-            Photos
+            Covid-tracker
           </Typography>
 
           <div>
@@ -76,19 +72,20 @@ const Header = () => {
                   open={Boolean(anchorEl)}
                   onClose={() => setAnchorEl(null)}
                 >
-                  <MenuItem onClick={() => handleMenuClick('/')}>Home</MenuItem>
-                  <MenuItem onClick={() => handleMenuClick('/countries/usa')}>USA - Page</MenuItem>
-                  <MenuItem onClick={() => handleMenuClick('/countries/italy')}>Italy - Page</MenuItem>
-                  <MenuItem onClick={() => handleMenuClick('/continents')}>Continents</MenuItem>
+                  {menuItems.map((item) => {
+                    const { menuTitle, url } = item
+                    return (
+                      <MenuItem key={menuTitle} onClick={() => navigate(url)}>
+                        {menuTitle}
+                      </MenuItem>)
+                  })}
                 </Menu>
               </>)
               : (
                 <div className={styles.headerOptions}>
                   <Button color='error' variant='contained'>Home</Button>
-              
                 </div>)
             }
-
           </div>
         </Toolbar>
       </AppBar>
