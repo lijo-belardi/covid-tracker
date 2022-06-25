@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { Button } from '@mui/material';
+
 // Mui others tool
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -32,10 +32,12 @@ const Header = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          {/* LOGO */}
           <Typography
             variant="h6"
             component="div"
             sx={{
+              flexGrow: 1,
               [theme.breakpoints.down('sm')]: {
                 flexGrow: 1
               }
@@ -83,7 +85,13 @@ const Header = () => {
               </>)
               : (
                 <div className={styles.headerOptions}>
-                  <Button color='error' variant='contained'>Home</Button>
+                  {menuItems.map((item) => {
+                    const { menuTitle, url } = item
+                    return (
+                      <MenuItem key={menuTitle} onClick={() => navigate(url)}>
+                        {menuTitle}
+                      </MenuItem>)
+                  })}
                 </div>)
             }
           </div>
