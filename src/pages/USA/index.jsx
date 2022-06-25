@@ -81,6 +81,8 @@ const USAPage = () => {
           </ErrorBoundary>
         </Card>
       </Container>
+
+      {/* TODO BArchart con gli state */}
     </div>
   )
 }

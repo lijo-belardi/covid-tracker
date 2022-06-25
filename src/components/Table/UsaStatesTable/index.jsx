@@ -57,7 +57,9 @@ const UsaStatesTable = () => {
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 {/* State - name */}
-                                <TableCell align="center">{state.state}</TableCell>
+                                <TableCell align="center">
+                                    <Link to={`/countries/usa/${state.state}`}>{state.state}</Link>
+                                    </TableCell>
                                 {/* State - cases */}
                                 <TableCell align="center">{millify(state.cases)}</TableCell>
                                 {/* State - deaths */}
