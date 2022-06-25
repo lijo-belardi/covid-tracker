@@ -1,5 +1,7 @@
 @use '../../style/' as *;
 
-header {
-    background-color: $primary-color-inverse;
+.headerOptions {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
 }
