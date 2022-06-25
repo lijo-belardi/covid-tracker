@@ -88,7 +88,7 @@ const Header = () => {
                   {menuItems.map((item) => {
                     const { menuTitle, url } = item
                     return (
-                      <MenuItem key={menuTitle} onClick={() => navigate(url)}>
+                      <MenuItem className={styles.headerItem} key={menuTitle} onClick={() => navigate(url)}>
                         {menuTitle}
                       </MenuItem>)
                   })}
