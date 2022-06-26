@@ -15,7 +15,7 @@ const AllDataSection = () => {
 
     return (
         <Container className={styles.globalDataContainer}>
-            <Typography variant='h3' align='center'>
+            <Typography variant='h3' align='center' className={styles.globalDataContainerTitle}>
                 Covid - global situation
             </Typography>
 

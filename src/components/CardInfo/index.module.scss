@@ -3,7 +3,13 @@
 .card {
     padding: 1rem;
     margin-top: 2rem;
-    border: 0.125rem solid $tertiary-color;
+    border: 0.125rem solid $mui-primary;
+    transition: 300ms;
+
+    &:hover {
+        background-color: $mui-primary;
+        color: $primary-color;
+    }
 }
 
 
