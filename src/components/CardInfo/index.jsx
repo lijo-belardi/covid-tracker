@@ -6,11 +6,11 @@ import styles from './index.module.scss'
 
 const CardInfo = (props) => {
     return (
-        <Card className={styles.card}>
-            <Typography variant='h5'> {props.title}</Typography>
-            <Typography>Total: {props.data}</Typography>
-            <Typography>Today: {props.todayData}</Typography>
-        </Card>
+            <Card className={styles.card}>
+                <Typography variant='h5'> {props.title}</Typography>
+                <Typography>Total: {props.data}</Typography>
+                <Typography>Today: {props.todayData}</Typography>
+            </Card>
     )
 }
 

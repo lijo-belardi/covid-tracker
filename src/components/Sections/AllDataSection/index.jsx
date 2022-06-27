@@ -8,16 +8,18 @@ import CardInfo from '../../CardInfo'
 import { Container, Typography, Grid } from '@mui/material'
 // Style
 import styles from './index.module.scss'
-
+import { motion } from 'framer-motion'
 
 const AllDataSection = () => {
     const [data, setData] = useContext(AllGlobalDataContext)
 
     return (
         <Container className={styles.globalDataContainer}>
-            <Typography variant='h3' align='center' className={styles.globalDataContainerTitle}>
-                Covid - global situation
-            </Typography>
+            <motion.div whileHover={{ scale: 0.99, color: '#2196f3' }}>
+                <Typography variant='h3' align='center'>
+                    Covid - global situation
+                </Typography>
+            </motion.div>
 
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={4}>
