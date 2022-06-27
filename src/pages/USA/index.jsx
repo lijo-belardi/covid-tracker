@@ -22,6 +22,7 @@ const USAPage = () => {
   const { data: country, loading, error } = useApiClient(requests.usaData)
   //console.log(country);
   return (
+    
     /* TODO aggiungere Typograhy */
     <div>
       <Header />
