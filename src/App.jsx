@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home";
 import Continents from './pages/Continents';
 import Country from './pages/Country';
-import USAPage from './pages/Usa';
+import USAPage from './pages/USA';
 import ItalyPage from './pages/Italy';
 import UsaStatePage from './pages/UsaState';
 
