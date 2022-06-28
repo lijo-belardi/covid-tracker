@@ -43,7 +43,7 @@ const ContinentsBarChart = () => {
 
     // BarChart - options's configuration
     let options = {
-        //responsive: true,
+        responsive: true,
         maintainAspectRatio: false,
         scales: {
             y: {
