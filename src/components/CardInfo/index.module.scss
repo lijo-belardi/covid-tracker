@@ -7,9 +7,17 @@
 }
 
 
+
 @media (max-width: 600px) {
     .card {
         margin-right: 3.75rem;
         margin-left: 3.75rem;
     }  
+}
+
+@media (max-width: 360px) {
+    .card {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
 }
