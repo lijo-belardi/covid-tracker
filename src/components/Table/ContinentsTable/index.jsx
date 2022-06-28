@@ -1,10 +1,14 @@
 // React
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+// MUI
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 // Others import
 import apiClient from '../../../apiClient'
 
 const ContinentsTable = () => {
     const [continentsData, setContinentsData] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         getData()
@@ -21,20 +25,28 @@ const ContinentsTable = () => {
     }
 
     return (
-        <div> {/* TODO vedere MUI Material per migliorare la tabella */}
-            <table>
-                <tbody>
-                    {continentsData?.map((continent) => {
-                        return (
-                            <tr key={continent.continent}>
-                                <td>{continent.continent}</td> {/* TODO aggiungere i Link */}
-                                <td>{continent.deaths}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-        </div>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell>Continent</TableCell>
+                    <TableCell >Deaths</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {continentsData?.map((continent) => (
+                    <TableRow
+                        key={continent.continent}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                        <TableCell scope="row">
+                            {continent.continent}
+                        </TableCell>
+                        <TableCell>{continent.deaths}</TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+
+        </Table>
     )
 }
 
