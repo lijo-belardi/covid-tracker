@@ -10,27 +10,21 @@ import styles from './index.module.scss'
 
 const ContinentsSection = () => {
     return (
-        <Container className={styles.continentsContainer}> {/* TODO aggiungere margin-top e min-height */}
-            <Typography variant='h3' align='center'>Continents</Typography>
-            {/* TODO tabella con dentro i continenti */}
+        <Container 
+        className={styles.continentsContainer}
+        sx={{minHeight: '31.25rem'}}>
+            <Typography variant='h3' align='center' sx={{marginBottom: '1rem'}}>Continents</Typography>
             {/* Link ad ogni continente */}
             <Grid container spacing={2}>
-                <Grid item lg={4}>
+                <Grid item xs={12} md={6} lg={4} >
                     {/* Table */}
-                    {/* TODO risolvere questo problema:
-                    validateDOMNesting(...): 
-                    Whitespace text nodes cannot appear as a child of <tr>. 
-                    Make sure you don't have any extra whitespace between 
-                    tags on each line of your source code. */}
-                    
-                    {/* TODO migliorare graficamente */}
-                    {/* <Card>
+                    <Card sx={{padding: '0.5rem'}}>
                         <ContinentsTable />
-                    </Card> */}
+                    </Card>
                 </Grid>
-                <Grid item lg={8}>
+                <Grid item xs={12} md={6} lg={8}>
                     {/*  BarChart */}
-                    <Card>
+                    <Card sx={{minHeight: '100%', padding: '0.5rem'}}>
                         <ContinentsBarChart />
                     </Card>
                 </Grid>
