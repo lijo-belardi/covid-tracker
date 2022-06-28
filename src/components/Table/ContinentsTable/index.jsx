@@ -28,8 +28,8 @@ const ContinentsTable = () => {
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell><strong>Continent</strong></TableCell>
-                    <TableCell><strong>Cases</strong></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }}>Continent</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }}>Cases</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>

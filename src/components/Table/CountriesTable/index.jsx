@@ -1,7 +1,10 @@
 // React
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
+
+// Mui components
+import { Typography } from '@mui/material';
 
 // MUI Table
 import Table from '@mui/material/Table';
@@ -16,17 +19,20 @@ import Paper from '@mui/material/Paper';
 import apiClient from '../../../apiClient';
 import logErrors from '../../../utility/consoleShortcuts'
 import requests from '../../../apiClient/requests';
+import { motion } from 'framer-motion';
 
 
 const CountriesTable = () => {
     const [countries, seCountries] = useState([])
+    const navigate = useNavigate()
+
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
         try {
-            const response = await apiClient.get(requests.countriesCases) 
+            const response = await apiClient.get(requests.countriesCases)
             seCountries(response.data)
         } catch (error) {
             logErrors(error)
@@ -34,19 +40,17 @@ const CountriesTable = () => {
     }
 
     return (
-        <div>
-            {/* TODO migliorare generalmente la tabella
-            - vedere sistema di paginazione.
-            */}
-
-            <TableContainer component={Paper}>
-                <Table align='center' aria-label="simple table">
+        <>
+            <TableContainer
+                component={Paper}
+                sx={{ height: ['300px', '500px'] }}>
+                <Table align='center' aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Country</TableCell>
-                            <TableCell align='center'>Flag</TableCell>
-                            <TableCell align="center">Cases</TableCell>
-                            <TableCell align="center">Deaths</TableCell>
+                            <TableCell sx={{ fontWeight: 'bold' }}>Country</TableCell>
+                            <TableCell align='center' sx={{ fontWeight: 'bold' }}>Flag</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Cases</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Deaths</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -56,9 +60,12 @@ const CountriesTable = () => {
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell component="th" scope="row">
-                                    <Link to={`/countries/${country.country}`}>
-                                    {country.country}
-                                    </Link>
+                                    <Typography
+                                        sx={{ maxWidth: 'fit-content' }}
+                                        component={motion.div}
+                                        whileHover={{ backgroundColor: '#1a76d3', color: '#FAF8FF', cursor: 'pointer' }}
+                                        onClick={() => navigate(`/countries/${country.country}`)}>
+                                        {country.country}</Typography>
                                 </TableCell>
                                 <TableCell align="center">
                                     {/* TODO valutare se fare Context per le bandiere con localStorage */}
@@ -75,7 +82,7 @@ const CountriesTable = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+        </>
     )
 }
 
