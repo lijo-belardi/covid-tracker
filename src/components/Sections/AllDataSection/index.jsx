@@ -15,11 +15,16 @@ const AllDataSection = () => {
 
     return (
         <Container className={styles.globalDataContainer}>
-            <motion.div whileHover={{ scale: 0.99, color: '#2196f3' }}>
-                <Typography variant='h3' align='center'>
-                    Covid - global situation
-                </Typography>
-            </motion.div>
+
+            <Typography
+                variant='h3'
+                align='center'
+                component={motion.div}
+                sx={{ marginBottom: '1rem', backgroundColor: '#1a76d3', color: '#FAF8FF', borderRadius: '0.313rem' }}
+                whileHover={{ backgroundColor: '#FAF8FF', color: '#1a76d3', outline: '1px solid #1a76d3' }}>
+                Covid - global situation
+            </Typography>
+
 
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={4}>

@@ -10,7 +10,7 @@ const CardInfo = (props) => {
         <Card
             className={styles.card}
             component={motion.div}
-            whileHover={{ scale: 0.99, backgroundColor: '#2196f3', color: '#FAF8FF' }}>
+            whileHover={{ scale: 0.99, backgroundColor: '#1a76d3', color: '#FAF8FF' }}>
             <Typography variant='h5'> {props.title}</Typography>
             <Typography>Total: {props.data}</Typography>
             <Typography>Today: {props.todayData}</Typography>

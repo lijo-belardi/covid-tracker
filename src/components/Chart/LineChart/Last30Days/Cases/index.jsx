@@ -6,6 +6,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 // Others import
 import apiClient from '../../../../../apiClient'
+import requests from '../../../../../apiClient/requests';
 import logErrors from '../../../../../utility/consoleShortcuts'
 
 
@@ -22,12 +23,16 @@ const LineChartAllLast30DaysCases = () => {
         datasets: [
             {
                 label: 'Cases',
-                backgroundColor: '#AE3813',
-                borderColor: '#AE3813',
+                backgroundColor: '#1a76d3',
+                borderColor: '#1a76d3',
                 data: casesDateValue.map(dateValue => dateValue),
             }
         ]
     };
+
+    let options = {
+        responsive: true
+    }
 
     useEffect(() => {
         getData()
@@ -35,14 +40,14 @@ const LineChartAllLast30DaysCases = () => {
 
     const getData = async () => {
         try {
-            const response = await apiClient.get('/v3/covid-19/historical/all?lastdays=30')
+            const response = await apiClient.get(requests.last30DaysData)
             setCases(response.data.cases)
         } catch (error) {
             logErrors(error)
         }
     }
 
-    return (<Line data={data} style={{ maxHeight: 400 }} />)
+    return (<Line data={data} style={{ maxHeight: 400 }} options={options} />)
 }
 
 export default LineChartAllLast30DaysCases
