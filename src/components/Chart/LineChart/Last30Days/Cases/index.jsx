@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react'
 // React-Chartjs-2
 import { Line } from 'react-chartjs-2';
 // Chart.js
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 // Others import
 import apiClient from '../../../../../apiClient'
 import logErrors from '../../../../../utility/consoleShortcuts'
 
 
 // ChartJs Register
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
+ChartJS.register(Tooltip, CategoryScale, LinearScale, PointElement, Legend, LineElement);
 
 const LineChartAllLast30DaysCases = () => {
     const [cases, setCases] = useState({})
