@@ -84,11 +84,15 @@ const Header = () => {
                   {menuItems.map((item) => {
                     const { menuTitle, url } = item
                     return (
-                      <motion.div key={menuTitle} whileHover={{ scale: 0.99, color: '#000' }}>
-                        <MenuItem className={styles.headerItem} onClick={() => navigate(url)}>
-                          {menuTitle}
-                        </MenuItem>
-                      </motion.div>)
+                      <MenuItem
+                        key={menuTitle}
+                        className={styles.headerItem}
+                        onClick={() => navigate(url)}
+                        component={motion.div}
+                        whileHover={{ scale: 0.98, color: '#2196f3', backgroundColor: '#FAF8FF' }}>
+                        {menuTitle}
+                      </MenuItem>
+                    )
                   })}
                 </div>)
             }
