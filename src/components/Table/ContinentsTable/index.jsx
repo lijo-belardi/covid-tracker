@@ -28,8 +28,8 @@ const ContinentsTable = () => {
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell>Continent</TableCell>
-                    <TableCell >Deaths</TableCell>
+                    <TableCell><strong>Continent</strong></TableCell>
+                    <TableCell ><strong>Cases</strong></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -41,7 +41,7 @@ const ContinentsTable = () => {
                         <TableCell scope="row">
                             {continent.continent}
                         </TableCell>
-                        <TableCell>{continent.deaths}</TableCell>
+                        <TableCell>{continent.cases}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
