@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-
 // Mui others tool
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -17,6 +16,7 @@ import { useTheme } from '@mui/material/styles';
 import styles from './index.module.scss'
 import menuItems from './menuItems';
 import HandleMenuClick from './HandleMenuClick';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -36,19 +36,14 @@ const Header = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{
-              flexGrow: 1,
-              [theme.breakpoints.down('sm')]: {
-                flexGrow: 1
-              }
-            }}
-          >
+            sx={{ flexGrow: 1, [theme.breakpoints.down('sm')]: { flexGrow: 1 } }}>
             Covid-tracker
           </Typography>
 
           <div>
             {isMobile ? (
               <>
+                {/* Breakpoint (< sm) */}
                 <IconButton
                   size="large"
                   aria-label="account of current user"
@@ -84,13 +79,16 @@ const Header = () => {
                 </Menu>
               </>)
               : (
+                /* Breakpoint (> sm) */
                 <div className={styles.headerOptions}>
                   {menuItems.map((item) => {
                     const { menuTitle, url } = item
                     return (
-                      <MenuItem className={styles.headerItem} key={menuTitle} onClick={() => navigate(url)}>
-                        {menuTitle}
-                      </MenuItem>)
+                      <motion.div key={menuTitle} whileHover={{ scale: 0.99, color: '#000' }}>
+                        <MenuItem className={styles.headerItem} onClick={() => navigate(url)}>
+                          {menuTitle}
+                        </MenuItem>
+                      </motion.div>)
                   })}
                 </div>)
             }
