@@ -29,7 +29,7 @@ const ContinentsTable = () => {
             <TableHead>
                 <TableRow>
                     <TableCell><strong>Continent</strong></TableCell>
-                    <TableCell ><strong>Cases</strong></TableCell>
+                    <TableCell><strong>Cases</strong></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
