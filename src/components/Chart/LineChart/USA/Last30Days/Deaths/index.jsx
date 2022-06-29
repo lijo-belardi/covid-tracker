@@ -21,7 +21,7 @@ const LineChartUSALast30DaysDeaths = () => {
         labels: dates.map(singleDay => singleDay),
         datasets: [
             {
-                label: 'Cases',
+                label: 'Deaths',
                 backgroundColor: '#1a76d3',
                 borderColor: '#1a76d3',
                 data: deathsDateValue.map(dateValue => dateValue),
