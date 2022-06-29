@@ -71,6 +71,7 @@ const USAPage = () => {
         {/* Last 30 days - LineCharts's Grid */}
         <Grid container spacing={4}>
           <Grid item xs={12} lg={6}>
+            {/* LineChart - Cases */}
             <Card sx={{ padding: '1rem' }}>
               <Typography variant='h5'>Cases</Typography>
               <ErrorBoundary>
@@ -80,6 +81,7 @@ const USAPage = () => {
           </Grid>
 
           <Grid item xs={12} lg={6}>
+            {/* LineChart - Deaths */}
             <Card sx={{ padding: '1rem' }}>
               <Typography variant='h5'>Deaths</Typography>
               <ErrorBoundary>
@@ -91,7 +93,8 @@ const USAPage = () => {
       </Container>
 
       {/*  USA - countries's table */}
-      <Container>
+      <Container sx={{ marginTop: '3rem' }}>
+      <Title text='All Americans state' />
         <Card>
           <ErrorBoundary>
             <UsaStatesTable />
