@@ -1,7 +1,9 @@
 // React
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
+// MUI Components
+import { Typography } from '@mui/material';
 
 // MUI Table
 import Table from '@mui/material/Table';
@@ -17,10 +19,12 @@ import apiClient from '../../../apiClient';
 import logErrors from '../../../utility/consoleShortcuts'
 import requests from '../../../apiClient/requests';
 import millify from 'millify'
+import { motion } from 'framer-motion';
 
 
 const UsaStatesTable = () => {
     const [states, setStates] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         getData()
     }, [])
@@ -36,18 +40,16 @@ const UsaStatesTable = () => {
     }
 
     return (
-        <div>
-            {/* TODO migliorare generalmente la tabella
-            - vedere sistema di paginazione.
-            */}
-            
-            <TableContainer component={Paper}>
-                <Table align='center' aria-label="simple table">
+        <>
+            <TableContainer
+                component={Paper}
+                sx={{ height: ['300px', '500px'] }}>
+                <Table align='center' aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
-                            <TableCell align='center'>State</TableCell>
-                            <TableCell align="center">Cases</TableCell>
-                            <TableCell align="center">Deaths</TableCell>
+                            <TableCell align='left' sx={{ fontWeight: 'bold' }}>State</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Cases</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Deaths</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -58,8 +60,13 @@ const UsaStatesTable = () => {
                             >
                                 {/* State - name */}
                                 <TableCell align="center">
-                                    <Link to={`/countries/usa/${state.state}`}>{state.state}</Link>
-                                    </TableCell>
+                                    <Typography
+                                        sx={{ maxWidth: 'fit-content' }}
+                                        component={motion.div}
+                                        whileHover={{ backgroundColor: '#1a76d3', color: '#FAF8FF', cursor: 'pointer' }}
+                                        onClick={() => navigate(`/countries/usa/${state.state}`)}>
+                                        {state.state}</Typography>
+                                </TableCell>
                                 {/* State - cases */}
                                 <TableCell align="center">{millify(state.cases)}</TableCell>
                                 {/* State - deaths */}
@@ -69,7 +76,7 @@ const UsaStatesTable = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+        </>
     )
 }
 
