@@ -28,12 +28,11 @@ const Continents = () => {
           <Typography variant='h5'>Description</Typography>
           {/* TODO cambiare contenuto della descrizione */}
           <Typography align='justify'>
-            In this section, it is possible to view a table with all the world states, with the relative number of cases and deaths.
-            By clicking on the name of the individual state, you can get more details on the dedicated page.
+            In this section, you can view the details on the individual continents.
           </Typography>
         </Card>
 
-        <Grid container spacing={2} sx={{marginTop: '1rem'}}>
+        <Grid container spacing={2} sx={{ marginTop: '1rem' }}>
           {continents &&
             continents?.map(continent => (
               <Grid item xs={12} sm={6} key={continent.continent}>
@@ -67,7 +66,7 @@ const Continents = () => {
         </Card>
       </Container>
 
-    
+
       <Footer />
     </div>
   )
