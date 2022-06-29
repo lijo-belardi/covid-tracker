@@ -32,7 +32,6 @@ const UsaStatesTable = () => {
     const getData = async () => {
         try {
             const response = await apiClient.get(requests.usaStates)
-            console.log(response.data)
             setStates(response.data)
         } catch (error) {
             logErrors(error)
