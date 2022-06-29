@@ -36,7 +36,7 @@ const Continents = () => {
         <Grid container spacing={2} sx={{marginTop: '1rem'}}>
           {continents &&
             continents?.map(continent => (
-              <Grid item sm={6} key={continent.continent}>
+              <Grid item xs={12} sm={6} key={continent.continent}>
                 <Card>
                   <NestedList
                     continentName={continent.continent}
