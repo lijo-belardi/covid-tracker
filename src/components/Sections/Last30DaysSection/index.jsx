@@ -2,7 +2,7 @@ import React from 'react'
 // My components
 import LineChartAllLast30DaysCases from '../../Chart/LineChart/Last30Days/Cases'
 import LineChartAllLast30DaysDeaths from '../../Chart/LineChart/Last30Days/Deaths'
-
+import Title from '../../Title'
 // Mui components
 import { Container, Typography, Grid, Card } from '@mui/material'
 // Style
@@ -14,14 +14,7 @@ const Last30DaysSection = () => {
     return (
         <Container className={styles.Last30DaysContainer}>
             {/* Title */}
-            <Typography
-                variant='h3'
-                align='center'
-                component={motion.div}
-                sx={{ marginBottom: '1rem', backgroundColor: '#1a76d3', color: '#FAF8FF', borderRadius: '0.313rem'}}
-                whileHover={{ backgroundColor: '#FAF8FF', color: '#1a76d3', outline:'1px solid #1a76d3'}}>
-                Last 30 days
-            </Typography>
+            <Title text='Last 30 days' />
 
             {/* TODO migliorare vista griglia */}
             {/* TODO testare responsività */}

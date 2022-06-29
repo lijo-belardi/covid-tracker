@@ -3,6 +3,7 @@ import React from 'react'
 // My components
 import ContinentsBarChart from '../../Chart/BarChart/Continents'
 import ContinentsTable from '../../Table/ContinentsTable'
+import Title from '../../Title'
 // Mui components
 import { Container, Typography, Grid, Card } from '@mui/material'
 // Style
@@ -17,14 +18,7 @@ const ContinentsSection = () => {
             sx={{ minHeight: '31.25rem' }}>
 
             {/* Title */}
-            <Typography
-                variant='h3'
-                align='center'
-                component={motion.div}
-                sx={{ marginBottom: '1rem', backgroundColor: '#1a76d3', color: '#FAF8FF', borderRadius: '0.313rem'}}
-                whileHover={{ backgroundColor: '#FAF8FF', color: '#1a76d3', outline:'1px solid #1a76d3'}}>
-                Continents
-            </Typography>
+            <Title text='Continents' />
 
 
             {/* TODO Link ad ogni continente */}

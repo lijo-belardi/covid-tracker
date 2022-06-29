@@ -7,6 +7,8 @@ import CardInfo from '../../components/CardInfo'
 import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
 import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
+import Title from '../../components/Title'
+import Footer from '../../components/Footer'
 
 // MUI Components
 import { Container, Grid, Typography, Card } from '@mui/material'
@@ -23,12 +25,12 @@ const USAPage = () => {
   const { data: country, loading, error } = useApiClient(requests.usaData)
   //console.log(country);
   return (
-    
+
     /* TODO aggiungere Typograhy */
     <div>
       <Header />
       <Container className={styles.titleContainer}>
-        {country && <h1>{country.country}</h1>}
+        {country && <Title text={`${country.country} - Covid situation`} />}
       </Container>
 
       <Container>
@@ -85,6 +87,8 @@ const USAPage = () => {
       </Container>
 
       {/* TODO BArchart con gli state */}
+
+      <Footer />
     </div>
   )
 }
