@@ -19,7 +19,6 @@ const BarChartUSALast30DaysCases = () => {
         const getData = async () => {
             try {
                 const response = await apiClient.get(requests.usaStates)
-                console.log(response.data)
                 setUsaStatesLast30DaysCases(response.data)
             } catch (error) {
                 logErrors(error)
