@@ -25,15 +25,17 @@ const USAPage = () => {
   const { data: country, loading, error } = useApiClient(requests.usaData)
   //console.log(country);
   return (
-
-    /* TODO aggiungere Typograhy */
     <div>
+      {/* Header */}
       <Header />
+
+      {/* Title */}
       <Container className={styles.titleContainer}>
         {country && <Title text={`${country.country} - Covid situation`} />}
       </Container>
 
       <Container>
+        {/* CardInfo */}
         {country && <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <CardInfo
@@ -56,25 +58,36 @@ const USAPage = () => {
               todayData={country.todayRecovered} />
           </Grid>
         </Grid>}
-        {loading && <h1>Loading</h1>} {/* TODO migliorare */}
+
+        {loading && <Typography variant='h2'>Loading</Typography>}
       </Container>
 
-      {/*  Last 30 days - LineCharts */}
-      <Container> {/* TODO migliorare graficamente */}
-        <ErrorBoundary>
-          <Typography variant='h3'>Last 30 Days</Typography>
-          <Card>
-            <Typography variant='h4'>Cases</Typography>
-            <LineChartUSALast30DaysCases />
-          </Card>
-        </ErrorBoundary>
+      {/*  Last 30 days section */}
+      <Container sx={{ marginTop: '3rem' }}>
 
-        <ErrorBoundary>
-          <Card>
-            <Typography variant='h4'>Deaths</Typography>
-            <LineChartUSALast30DaysDeaths />
-          </Card>
-        </ErrorBoundary>
+        {/* Last 30 days - Title */}
+        <Title text='Last 30 Days' />
+
+        {/* Last 30 days - LineCharts's Grid */}
+        <Grid container spacing={4}>
+          <Grid item xs={12} lg={6}>
+            <Card sx={{ padding: '1rem' }}>
+              <Typography variant='h5'>Cases</Typography>
+              <ErrorBoundary>
+                <LineChartUSALast30DaysCases />
+              </ErrorBoundary>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} lg={6}>
+            <Card sx={{ padding: '1rem' }}>
+              <Typography variant='h5'>Deaths</Typography>
+              <ErrorBoundary>
+                <LineChartUSALast30DaysDeaths />
+              </ErrorBoundary>
+            </Card>
+          </Grid>
+        </Grid>
       </Container>
 
       {/*  USA - countries's table */}
