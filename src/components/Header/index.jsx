@@ -83,7 +83,7 @@ const Header = () => {
                         className={styles.headerItem}
                         onClick={() => navigate(url)}
                         component={motion.div}
-                        whileHover={{ scale: 0.98, color: '#2196f3', backgroundColor: '#FAF8FF' }}>
+                        whileHover={{ scale: 0.98, color: '#1a76d3', backgroundColor: '#FAF8FF' }}>
                         {menuTitle}
                       </MenuItem>
                     )
