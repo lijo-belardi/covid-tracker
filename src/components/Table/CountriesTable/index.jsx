@@ -68,7 +68,6 @@ const CountriesTable = () => {
                                         {country.country}</Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    {/* TODO valutare se fare Context per le bandiere con localStorage */}
                                     <img
                                         style={{ width: '30px' }}
                                         src={country.countryInfo.flag}

@@ -16,8 +16,6 @@ const Last30DaysSection = () => {
             {/* Title */}
             <Title text='Last 30 days' />
 
-            {/* TODO migliorare vista griglia */}
-            {/* TODO testare responsività */}
             <Grid container spacing={4}>
                 <Grid item xs={12} lg={6}>
                     <Card className={styles.lineChartCard}
@@ -27,6 +25,7 @@ const Last30DaysSection = () => {
                         <LineChartAllLast30DaysCases />
                     </Card>
                 </Grid>
+                
                 <Grid item xs={12} lg={6}>
                     <Card className={styles.lineChartCard}
                         component={motion.div}
