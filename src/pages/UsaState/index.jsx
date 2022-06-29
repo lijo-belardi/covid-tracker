@@ -47,8 +47,8 @@ const UsaStatePage = () => {
         <div>
             <Header />
 
-            <Container sx={{marginTop: '4rem'}}>
-                <Title text={`${data.state} - Covid situation`} /> 
+            <Container sx={{ marginTop: '4rem' }}>
+                <Title text={`${data.state} - Covid situation`} />
                 <h3>Number of counties: {counties.length}</h3>
             </Container>
 
