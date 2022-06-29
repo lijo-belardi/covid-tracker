@@ -48,26 +48,38 @@ export default function NestedList(props) {
                     <ListItemButton >
                         <ListItemText>
                             <Box>
-                                <Typography variant='h6'>Basic information</Typography>
-                                <Typography>Population: {props.population}</Typography>
+                                <Typography
+                                    sx={{ borderBottom: '1px solid #1a76d3' }}
+                                    variant='h6'>Basic information</Typography>
+                                <Typography sx={{ marginTop: '0.5rem' }}> Population: {props.population}</Typography>
                                 <Typography>Latitude: {props.coordinates.lat}</Typography>
                                 <Typography>Longitude: {props.coordinates.long}</Typography>
                             </Box>
+
                             <Box sx={{ marginTop: '0.5rem' }}>
-                                <Typography variant='h6'>Cases</Typography>
-                                <Typography>Total: {props.cases}</Typography>
+                                <Typography
+                                    sx={{ borderBottom: '1px solid #1a76d3', marginTop:'0.5rem' }}
+                                    variant='h6'>Cases</Typography>
+                                <Typography sx={{ marginTop: '0.5rem' }}> Total: {props.cases} </Typography>
                                 <Typography>Today: {props.todayCases}</Typography>
                             </Box>
+
                             <Box sx={{ marginTop: '0.5rem' }}>
-                                <Typography variant='h6'>Deaths</Typography>
-                                <Typography>Total: {props.deaths}</Typography>
+                                <Typography
+                                    sx={{ borderBottom: '1px solid #1a76d3', marginTop:'0.5rem' }}
+                                    variant='h6'>Deaths</Typography>
+                                <Typography sx={{ marginTop: '0.5rem' }}> Total: {props.deaths}</Typography>
                                 <Typography>Today: {props.todayDeaths}</Typography>
                             </Box>
+
                             <Box sx={{ marginTop: '0.5rem' }}>
-                                <Typography variant='h6'>Recovered</Typography>
-                                <Typography>Total: {props.deaths}</Typography>
+                                <Typography
+                                    sx={{ borderBottom: '1px solid #1a76d3', marginTop:'0.5rem' }}
+                                    variant='h6'>Recovered</Typography>
+                                <Typography sx={{ marginTop: '0.5rem' }}> Total: {props.deaths} </Typography>
                                 <Typography>Today: {props.todayRecovered}</Typography>
                             </Box>
+
                         </ListItemText>
                     </ListItemButton>
                 </List>
