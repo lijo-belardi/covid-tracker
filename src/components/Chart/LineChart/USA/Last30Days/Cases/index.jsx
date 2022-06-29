@@ -22,8 +22,8 @@ const LineChartUSALast30DaysCases = () => {
         datasets: [
             {
                 label: 'Cases',
-                backgroundColor: '#AE3813',
-                borderColor: '#AE3813',
+                backgroundColor: '#1a76d3',
+                borderColor: '#1a76d3',
                 data: casesDateValue.map(dateValue => dateValue),
             }
         ]
