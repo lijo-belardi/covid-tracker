@@ -35,8 +35,6 @@ const Home = () => {
         <AllCountries />
       </ErrorBoundary>
 
-      
-      {/* TODO Footer */}
       <ErrorBoundary>
         <Footer />
       </ErrorBoundary>
