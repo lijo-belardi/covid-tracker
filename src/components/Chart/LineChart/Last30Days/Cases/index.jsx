@@ -15,11 +15,11 @@ ChartJS.register(Tooltip, CategoryScale, LinearScale, PointElement, Legend, Line
 
 const LineChartAllLast30DaysCases = () => {
     const [cases, setCases] = useState({})
-    let date = Object.keys(cases)
+    let dates = Object.keys(cases)
     let casesDateValue = Object.values(cases)
 
     const data = {
-        labels: date.map(singleDay => singleDay),
+        labels: dates.map(singleDay => singleDay),
         datasets: [
             {
                 label: 'Cases',
