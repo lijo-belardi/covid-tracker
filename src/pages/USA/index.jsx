@@ -99,9 +99,25 @@ const USAPage = () => {
 
       {/*  USA - countries's table */}
       <Container sx={{ marginTop: '3rem' }}>
+        {/* Title */}
         <Title text='All Americans state' />
-        <Card component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
+        {/* Description */}
+        <Card
+          sx={{ padding: '1rem' }}
+          component={motion.div}
+          whileHover={{ outline: '1px solid #1a76d3' }}>
+          <Typography variant='h5'>Description</Typography>
+          <Typography align='justify'>
+            In this section, it is possible to view a table with all the USA's states, with the relative number of cases and deaths.
+            By clicking on the name of the individual state, you can get more details on the dedicated page.
+          </Typography>
+        </Card>
+
+        {/* Table */}
+        <Card
+          sx={{ marginTop: '2rem' }}
+          component={motion.div}
+          whileHover={{ outline: '1px solid #1a76d3' }}>
           <ErrorBoundary>
             <UsaStatesTable />
           </ErrorBoundary>
@@ -114,7 +130,7 @@ const USAPage = () => {
           <Card
             sx={{ minHeight: '700px', padding: '1rem' }}
             component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
+            whileHover={{ outline: '1px solid #1a76d3' }}>
             <Typography variant='h5'>Cases and Deaths in the last 30 days</Typography>
             <BarChartUSALast30DaysCases />
           </Card>
