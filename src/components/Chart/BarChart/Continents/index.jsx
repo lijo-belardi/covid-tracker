@@ -27,7 +27,7 @@ const ContinentsBarChart = () => {
         }
         getContinentsData()
     }, [])
-    
+
     // BarChart - data's configuration
     let data = {
         // labels --> continents's name
@@ -38,7 +38,22 @@ const ContinentsBarChart = () => {
             // data --> numbers of cases 
             data: continentsData?.map(continent => continent.cases),
             borderWidth: 1
-        }]
+        },
+        {
+            label: 'Deaths',
+            backgroundColor: 'rgb(211, 47, 48, 0.8)',
+            // data --> numbers of cases 
+            data: continentsData?.map(continent => continent.deaths),
+            borderWidth: 1
+        },
+        {
+            label: 'Recovered',
+            backgroundColor: 'rgb(129, 199, 132, 0.8)',
+            // data --> numbers of cases 
+            data: continentsData?.map(continent => continent.recovered),
+            borderWidth: 1
+        }
+        ]
     }
 
     // BarChart - options's configuration
