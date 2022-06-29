@@ -7,6 +7,7 @@ import CardInfo from '../../components/CardInfo'
 import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
 import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
+import BarChartUSALast30DaysCases from '../../components/Chart/BarChart/USA'
 import Title from '../../components/Title'
 import Footer from '../../components/Footer'
 
@@ -94,7 +95,7 @@ const USAPage = () => {
 
       {/*  USA - countries's table */}
       <Container sx={{ marginTop: '3rem' }}>
-      <Title text='All Americans state' />
+        <Title text='All Americans state' />
         <Card>
           <ErrorBoundary>
             <UsaStatesTable />
@@ -102,8 +103,16 @@ const USAPage = () => {
         </Card>
       </Container>
 
-      {/* TODO BArchart con gli state */}
-
+      {/*  USA - States's BarChart */}
+      <Container sx={{ marginTop: '3rem', minHeight: '700px' }}>
+        <ErrorBoundary>
+          <Card
+            sx={{ minHeight: '700px', padding: '1rem' }}>
+            <Typography variant='h5'>Cases and Deaths in the last 30 days</Typography>
+            <BarChartUSALast30DaysCases />
+          </Card>
+        </ErrorBoundary>
+      </Container>
       <Footer />
     </div>
   )
