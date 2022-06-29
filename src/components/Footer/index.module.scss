@@ -1,0 +1,9 @@
+@use "../../style/" as *;
+
+
+footer {
+    background-color: $mui-primary;
+    color: $primary-color;
+    margin-top: 6rem;
+    padding-top: 3rem;
+}
