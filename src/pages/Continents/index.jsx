@@ -36,7 +36,9 @@ const Continents = () => {
           {continents &&
             continents?.map(continent => (
               <Grid item xs={12} sm={6} key={continent.continent}>
-                <Card>
+                <Card
+                  component={motion.div}
+                  whileHover={{ outline: '1px solid #1a76d3' }}>
                   <NestedList
                     continentName={continent.continent}
                     population={continent.population}
