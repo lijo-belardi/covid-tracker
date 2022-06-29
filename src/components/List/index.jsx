@@ -13,10 +13,15 @@ import { Box, Typography } from '@mui/material';
 
 export default function NestedList(props) {
     const [open, setOpen] = useState(false);
+    const [openCountriesList, setOpenCountriesList] = useState(false)
 
     const handleClick = () => {
-        setOpen(!open);
-    };
+        setOpen(!open)
+    }
+
+    const handleClickCountries = () => {
+        setOpenCountriesList(!openCountriesList)
+    }
 
     return (
         <List
@@ -45,8 +50,8 @@ export default function NestedList(props) {
                             <Box>
                                 <Typography variant='h6'>Basic information</Typography>
                                 <Typography>Population: {props.population}</Typography>
-                                <Typography>Latitudine: {props.coordinates.lat}</Typography>
-                                <Typography>Longitudine: {props.coordinates.long}</Typography>
+                                <Typography>Latitude: {props.coordinates.lat}</Typography>
+                                <Typography>Longitude: {props.coordinates.long}</Typography>
                             </Box>
                             <Box sx={{ marginTop: '0.5rem' }}>
                                 <Typography variant='h6'>Cases</Typography>
@@ -68,10 +73,23 @@ export default function NestedList(props) {
                 </List>
             </Collapse>
 
+            <ListItemButton onClick={handleClickCountries}>
+                <Typography>Countries ({props.countries.length})</Typography>
+                {openCountriesList ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
 
+            <Collapse in={openCountriesList} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                    <ListItemButton >
+                        <ListItemText>
+                            <Box>
+                                {props.countries.join(' - ')}
+                            </Box>
+                        </ListItemText>
+                    </ListItemButton>
+                </List>
+            </Collapse>
 
-
-            
         </List>
     );
 }

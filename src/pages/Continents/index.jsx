@@ -48,6 +48,7 @@ const Continents = () => {
                     todayDeaths={continent.todayDeaths}
                     recovered={continent.recovered}
                     todayRecovered={continent.todayRecovered}
+                    countries={continent.countries}
                   />
                 </Card>
               </Grid>
