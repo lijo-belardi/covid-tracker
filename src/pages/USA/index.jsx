@@ -19,7 +19,7 @@ import requests from '../../apiClient/requests'
 // Styles
 import styles from './index.module.scss'
 import millify from 'millify'
-import { Line } from 'react-chartjs-2'
+import { motion } from 'framer-motion'
 
 
 const USAPage = () => {
@@ -73,7 +73,9 @@ const USAPage = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} lg={6}>
             {/* LineChart - Cases */}
-            <Card sx={{ padding: '1rem' }}>
+            <Card sx={{ padding: '1rem' }}
+              component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
               <Typography variant='h5'>Cases</Typography>
               <ErrorBoundary>
                 <LineChartUSALast30DaysCases />
@@ -83,7 +85,9 @@ const USAPage = () => {
 
           <Grid item xs={12} lg={6}>
             {/* LineChart - Deaths */}
-            <Card sx={{ padding: '1rem' }}>
+            <Card sx={{ padding: '1rem' }}
+              component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
               <Typography variant='h5'>Deaths</Typography>
               <ErrorBoundary>
                 <LineChartUSALast30DaysDeaths />
@@ -96,7 +100,8 @@ const USAPage = () => {
       {/*  USA - countries's table */}
       <Container sx={{ marginTop: '3rem' }}>
         <Title text='All Americans state' />
-        <Card>
+        <Card component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
           <ErrorBoundary>
             <UsaStatesTable />
           </ErrorBoundary>
@@ -107,7 +112,9 @@ const USAPage = () => {
       <Container sx={{ marginTop: '3rem', minHeight: '700px' }}>
         <ErrorBoundary>
           <Card
-            sx={{ minHeight: '700px', padding: '1rem' }}>
+            sx={{ minHeight: '700px', padding: '1rem' }}
+            component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
             <Typography variant='h5'>Cases and Deaths in the last 30 days</Typography>
             <BarChartUSALast30DaysCases />
           </Card>

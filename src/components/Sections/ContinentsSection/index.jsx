@@ -26,14 +26,18 @@ const ContinentsSection = () => {
             <Grid container spacing={2}>
                 {/* Grid - Table */}
                 <Grid item xs={12} md={6} lg={4} >
-                    <Card sx={{ padding: '0.5rem' }}>
+                    <Card sx={{ padding: '0.5rem' }}
+                        component={motion.div}
+                        whileHover={{ outline: '1px solid #1a76d3' }}>
                         <ContinentsTable />
                     </Card>
                 </Grid>
 
                 {/* Grid - BarChart */}
                 <Grid item xs={12} md={6} lg={8}>
-                    <Card sx={{ minHeight: '100%', padding: '0.5rem' }}>
+                    <Card sx={{ minHeight: '100%', padding: '0.5rem' }}
+                        component={motion.div}
+                        whileHover={{ outline: '1px solid #1a76d3' }}>
                         <ContinentsBarChart />
                     </Card>
                 </Grid>
