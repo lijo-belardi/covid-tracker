@@ -33,7 +33,7 @@ const ContinentsBarChart = () => {
         // labels --> continents's name
         labels: continentsData?.map(continent => continent.continent),
         datasets: [{
-            label: 'Continents',
+            label: 'Cases',
             backgroundColor: '#1a76d3',
             // data --> numbers of cases 
             data: continentsData?.map(continent => continent.cases),
