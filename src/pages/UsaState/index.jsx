@@ -8,7 +8,7 @@ import { Container, Grid, Typography } from '@mui/material'
 // Others import 
 import apiClient from '../../apiClient'
 
-
+/* TODO completare la pagina */
 const UsaStatePage = () => {
     const [data, setData] = useState([])
     const [counties, setCounties] = useState([])
