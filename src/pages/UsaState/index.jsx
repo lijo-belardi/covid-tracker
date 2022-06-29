@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // My Components
+import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
+import Title from '../../components/Title'
 // MUI Components
 import { Container, Grid, Typography } from '@mui/material'
 // Others import 
@@ -31,7 +33,7 @@ const UsaStatePage = () => {
         async function getStateHistoricalData() {
             try {
                 const response = await apiClient.get(`https://disease.sh/v3/covid-19/historical/usacounties/${(params.state).toLowerCase()}?lastdays=30`)
-  
+
                 setCounties(response.data)
             } catch (error) {
                 console.log(error);
@@ -43,9 +45,10 @@ const UsaStatePage = () => {
 
     return (
         <div>
+            <Header />
 
-            <Container>
-                <h1>{data.state}</h1>
+            <Container sx={{marginTop: '4rem'}}>
+                <Title text={`${data.state} - Covid situation`} /> 
                 <h3>Number of counties: {counties.length}</h3>
             </Container>
 
