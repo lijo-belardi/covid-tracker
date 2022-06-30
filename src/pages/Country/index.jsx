@@ -16,22 +16,38 @@ import { motion } from 'framer-motion'
 // Styles
 import styles from './index.module.scss'
 import Footer from '../../components/Footer'
+import LineChartCountryLast30Days from '../../components/Chart/LineChart/Country'
 
 const Country = () => {
     let params = useParams()
     const [country, setCountry] = useState([])
+    const [last30DaysData, setLast30DaysData] = useState([])
+    let dates = Object.keys(last30DaysData)
 
     useEffect(() => {
         async function getCountryDetails() {
             try {
                 const response = await apiClient.get(`/v3/covid-19/countries/${params.country}?strict=true`)
-                console.log(response.data);
+
                 setCountry(response.data)
             } catch (error) {
                 logErrors(error)
             }
         }
         getCountryDetails()
+    }, [params.country])
+
+    useEffect(() => {
+        async function getLast30DaysData() {
+            try {
+                const response = await apiClient.get(`/v3/covid-19/historical/${params.country}?lastdays=30`)
+                console.log(response.data);
+                setLast30DaysData(response.data)
+            } catch (error) {
+                logErrors(error)
+            }
+        }
+        getLast30DaysData()
     }, [params.country])
 
 
@@ -98,7 +114,7 @@ const Country = () => {
                     whileHover={{ outline: '1px solid #1a76d3' }}>
                     <Typography variant='h5'>Description</Typography>
                     <Typography align='justify'>
-                        The bar graph shows the total number of cases, deaths, 
+                        The bar graph shows the total number of cases, deaths,
                         and recovered in {country.country}.</Typography>
                 </Card>
 
@@ -116,8 +132,25 @@ const Country = () => {
             </Container>
 
 
-            <Container>
-                {/* TODO LineChart last30days (cases + deaths) */}
+            <Container sx={{ marginTop: '2rem' }}>
+                <Title text='Line Chart' />
+                {/* Description */}
+                <Card
+                    sx={{ padding: '1rem' }}
+                    component={motion.div}
+                    whileHover={{ outline: '1px solid #1a76d3' }}>
+                    <Typography variant='h5'>Description</Typography>
+                    <Typography align='justify'>
+                        The Line graph shows the total number of cases and deaths in {country.country}.</Typography>
+                </Card>
+                <Card
+                    sx={{ minHeight: '25rem', padding: '1rem', marginTop: '2rem' }}
+                    component={motion.div}
+                    whileHover={{ outline: '1px solid #1a76d3' }}>
+                    <ErrorBoundary>
+                        <LineChartCountryLast30Days countryName={params.country} />
+                    </ErrorBoundary>
+                </Card>
             </Container>
 
             {/* Footer */}
