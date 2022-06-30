@@ -7,6 +7,7 @@ import ErrorBoundary from '../../components/ErrorBoundary'
 import Footer from '../../components/Footer'
 import ContinentsBarChart from '../../components/Chart/BarChart/Continents'
 import NestedList from '../../components/List'
+import Subtitle from '../../components/Subtitle'
 // MUI Components
 import { Container, Card, Grid, Typography } from '@mui/material'
 // Others import
@@ -22,16 +23,10 @@ const Continents = () => {
       <Header />
       <Container sx={{ marginTop: '4rem' }}>
         <Title text='Continents - Covid Situation' />
-        <Card
-          sx={{ padding: '1rem' }}
-          component={motion.div}
-          whileHover={{ outline: '1px solid #1a76d3' }}>
-          <Typography variant='h5'>Description</Typography>
-          {/* TODO cambiare contenuto della descrizione */}
-          <Typography align='justify'>
-            In this section, you can view the details on the individual continents.
-          </Typography>
-        </Card>
+        <Subtitle
+          isDetails={false}
+          description="In this section, you can view the 
+          details on the individual continents." />
 
         <Grid container spacing={2} sx={{ marginTop: '1rem' }}>
           {continents &&
@@ -71,7 +66,7 @@ const Continents = () => {
       </Container>
 
       <Container sx={{ marginTop: '2rem', minHeight: '400px' }}>
-      <Title text='Continents - Radar Chart' />
+        <Title text='Continents - Radar Chart' />
         <Card sx={{ minHeight: '400px', padding: '1rem' }}>
           <ErrorBoundary>
             <ContinentsRadarChart />
