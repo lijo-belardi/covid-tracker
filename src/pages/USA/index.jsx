@@ -4,8 +4,7 @@ import React from 'react'
 import ErrorBoundary from '../../components/ErrorBoundary'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
-import LineChartUSALast30DaysCases from '../../components/Chart/LineChart/USA/Last30Days/Cases'
-import LineChartUSALast30DaysDeaths from '../../components/Chart/LineChart/USA/Last30Days/Deaths'
+import LineChartUSALast30DaysData from '../../components/Chart/LineChart/USA/Last30Days'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
 import BarChartUSALast30DaysCases from '../../components/Chart/BarChart/USA'
 import Title from '../../components/Title'
@@ -24,7 +23,7 @@ import { motion } from 'framer-motion'
 
 const USAPage = () => {
   const { data: country, loading, error } = useApiClient(requests.usaData)
-  //console.log(country);
+
   return (
     <div>
       {/* Header */}
@@ -65,36 +64,16 @@ const USAPage = () => {
 
       {/*  Last 30 days section */}
       <Container sx={{ marginTop: '3rem' }}>
-
         {/* Last 30 days - Title */}
         <Title text='Last 30 Days' />
-
-        {/* Last 30 days - LineCharts's Grid */}
-        <Grid container spacing={4}>
-          <Grid item xs={12} lg={6}>
-            {/* LineChart - Cases */}
-            <Card sx={{ padding: '1rem' }}
-              component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
-              <Typography variant='h5'>Cases</Typography>
-              <ErrorBoundary>
-                <LineChartUSALast30DaysCases />
-              </ErrorBoundary>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} lg={6}>
-            {/* LineChart - Deaths */}
-            <Card sx={{ padding: '1rem' }}
-              component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
-              <Typography variant='h5'>Deaths</Typography>
-              <ErrorBoundary>
-                <LineChartUSALast30DaysDeaths />
-              </ErrorBoundary>
-            </Card>
-          </Grid>
-        </Grid>
+        {/* LineChart*/}
+        <Card sx={{ padding: '1rem' }}
+          component={motion.div}
+          whileHover={{ outline: '1px solid #1a76d3' }}>
+          <ErrorBoundary>
+            <LineChartUSALast30DaysData />
+          </ErrorBoundary>
+        </Card>
       </Container>
 
       {/*  USA - countries's table */}

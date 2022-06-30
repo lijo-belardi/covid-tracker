@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
+// React
+import React, { useState, useEffect } from 'react'
+// React-Chartjs-2
 import { Line } from 'react-chartjs-2';
-
+// Chart.js
+import { Chart as ChartJS, Tooltip, Legend, Title, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 // Others import
-import logErrors from '../../../../utility/consoleShortcuts'
-import apiClient from '../../../../apiClient'
+import apiClient from '../../../../../apiClient'
+import requests from '../../../../../apiClient/requests'
+import logErrors from '../../../../../utility/consoleShortcuts'
 
+// ChartJs Register
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -23,11 +18,9 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend
-);
+    );
 
-
-
-const LineChartCountryLast30Days = ({ countryName }) => {
+const LineChartUSALast30DaysData = () => {
     const [cases, setCases] = useState({})
     const [deaths, setDeaths] = useState({})
 
@@ -36,21 +29,17 @@ const LineChartCountryLast30Days = ({ countryName }) => {
     let deathsDateValue = Object.values(deaths)
 
     useEffect(() => {
-        async function getLast30DaysData() {
+        const getData = async () => {
             try {
-                const response = await apiClient.get(`/v3/covid-19/historical/${countryName}?lastdays=30`)
-                console.log(response.data);
+                const response = await apiClient.get(requests.usaLast30Days)
                 setCases(response.data.timeline.cases)
                 setDeaths(response.data.timeline.deaths)
             } catch (error) {
                 logErrors(error)
             }
         }
-        getLast30DaysData()
-    }, [countryName])
-
-
-
+        getData()
+    }, [])
 
     const data = {
         labels: dates.map(singleDay => singleDay),
@@ -82,7 +71,7 @@ const LineChartCountryLast30Days = ({ countryName }) => {
         plugins: {
             title: {
                 display: true,
-                text: `${countryName.toUpperCase()} - Cases and Deaths `,
+                text: 'USA - Cases and Deaths',
             },
         },
         scales: {
@@ -102,7 +91,7 @@ const LineChartCountryLast30Days = ({ countryName }) => {
         },
     };
 
-    return <Line options={options} data={data} />;
+    return (<Line data={data} options={options}  />)
 }
 
-export default LineChartCountryLast30Days
+export default LineChartUSALast30DaysData
