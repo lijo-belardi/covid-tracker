@@ -9,12 +9,13 @@ import ContinentsBarChart from '../../components/Chart/BarChart/Continents'
 import NestedList from '../../components/List'
 import Subtitle from '../../components/Subtitle'
 // MUI Components
-import { Container, Card, Grid, Typography } from '@mui/material'
+import { Container, Card, Grid } from '@mui/material'
 // Others import
 import { motion } from 'framer-motion'
 import ContinentsRadarChart from '../../components/Chart/Radar/Continents'
 
 /* TODO cambiare chiamata API */
+/* TODO Aggiungere commenti */
 const Continents = () => {
   const { data: continents, loading } = useApiClient('/v3/covid-19/continents')
   console.log(continents);
