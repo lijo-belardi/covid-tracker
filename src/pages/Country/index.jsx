@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import Title from '../../components/Title'
+import Subtitle from '../../components/Subtitle'
 import ErrorBoundary from '../../components/ErrorBoundary'
 import BarChartCountry from '../../components/Chart/BarChart/Country'
+import LineChartCountryLast30Days from '../../components/Chart/LineChart/Country'
 // Mui Components
 import { Typography, Container, Grid, Card } from '@mui/material'
 // Others import 
@@ -16,7 +18,6 @@ import { motion } from 'framer-motion'
 // Styles
 import styles from './index.module.scss'
 import Footer from '../../components/Footer'
-import LineChartCountryLast30Days from '../../components/Chart/LineChart/Country'
 
 const Country = () => {
     let params = useParams()
@@ -47,17 +48,9 @@ const Country = () => {
             {/* Basic info */}
             <Container className={styles.otherInfo}>
                 <Card className={styles.otherInfoCard}>
-                    <Typography variant='h4'>
-                        Information
-                    </Typography>
-
-                    <Typography variant='h6'>
-                        Continent: {country.continent} {/* TODO link alla pagina del continente */}
-                    </Typography>
-
-                    <Typography variant='h6'>
-                        Population: {country.population}
-                    </Typography>
+                    <Typography variant='h4'>Information</Typography>
+                    <Typography variant='h6'>Continent: {country.continent}</Typography>
+                    <Typography variant='h6'>Population: {country.population}</Typography>
                 </Card>
             </Container>
 
@@ -90,16 +83,10 @@ const Country = () => {
             {/* BarChart */}
             <Container sx={{ marginTop: '2rem' }}>
                 <Title text='Bar Chart' />
-                {/* Description */}
-                <Card
-                    sx={{ padding: '1rem' }}
-                    component={motion.div}
-                    whileHover={{ outline: '1px solid #1a76d3' }}>
-                    <Typography variant='h5'>Description</Typography>
-                    <Typography align='justify'>
-                        The bar graph shows the total number of cases, deaths,
-                        and recovered in {country.country}.</Typography>
-                </Card>
+                <Subtitle
+                    isDetails={false}
+                    description={`The bar graph shows the total number of cases, deaths,
+                    and recovered in ${country.country}.`} />
 
                 <Card
                     sx={{ minHeight: '25rem', padding: '1rem', marginTop: '2rem' }}
@@ -114,19 +101,12 @@ const Country = () => {
                 </Card>
             </Container>
 
-
             <Container sx={{ marginTop: '2rem' }}>
                 <Title text='Line Chart' />
-                {/* Description */}
-                <Card
-                    sx={{ padding: '1rem' }}
-                    component={motion.div}
-                    whileHover={{ outline: '1px solid #1a76d3' }}>
-                    <Typography variant='h5'>Description</Typography>
-                    <Typography align='justify'>
-                        The Line graph shows the total number of cases and deaths in {country.country}.
-                    </Typography>
-                </Card>
+                <Subtitle
+                    isDetails={false}
+                    description={`The Line graph shows the total number of 
+                    cases and deaths in ${country.country} in the last 30 days.`} />
                 <Card
                     sx={{ minHeight: '25rem', padding: '1rem', marginTop: '2rem' }}
                     component={motion.div}
