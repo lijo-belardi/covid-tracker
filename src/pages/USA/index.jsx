@@ -6,12 +6,12 @@ import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import LineChartUSALast30DaysData from '../../components/Chart/LineChart/USA/Last30Days'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
-import BarChartUSALast30DaysCases from '../../components/Chart/BarChart/USA'
+import BarChartUSALast30Days from '../../components/Chart/BarChart/USA'
 import Title from '../../components/Title'
 import Footer from '../../components/Footer'
 
 // MUI Components
-import { Container, Grid, Typography, Card } from '@mui/material'
+import { Container, Grid, Typography, Card, Box } from '@mui/material'
 // Others import
 import useApiClient from '../../hooks/useApiClient'
 import requests from '../../apiClient/requests'
@@ -79,18 +79,36 @@ const USAPage = () => {
       {/*  USA - countries's table */}
       <Container sx={{ marginTop: '3rem' }}>
         {/* Title */}
-        <Title text='All Americans state' />
+        <Title text='All Americans state - Table' />
         {/* Description */}
-        <Card
-          sx={{ padding: '1rem' }}
-          component={motion.div}
-          whileHover={{ outline: '1px solid #1a76d3' }}>
-          <Typography variant='h5'>Description</Typography>
-          <Typography align='justify'>
-            In this section, it is possible to view a table with all the USA's states, with the relative number of cases and deaths.
-            By clicking on the name of the individual state, you can get more details on the dedicated page.
-          </Typography>
-        </Card>
+
+
+        <Grid container spacing={5}>
+          <Grid item sm={6}>
+            <Card
+              sx={{ padding: '1rem' }}
+              component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
+              <Typography variant='h5' sx={{ marginBottom: '0.5rem' }}>Description</Typography>
+              <Typography align='justify'>
+                In this section, it is possible to view a table with all the USA's states,
+                with the relative number of cases and deaths.
+              </Typography>
+            </Card>
+          </Grid>
+
+          <Grid item sm={6}>
+            <Card
+              sx={{ padding: '1rem' }}
+              component={motion.div}
+              whileHover={{ outline: '1px solid #1a76d3' }}>
+              <Typography variant='h5' sx={{ marginBottom: '0.5rem' }}>Details</Typography>
+              <Typography align='justify'>
+                By clicking on the name of the individual state, you can get more details on the dedicated page.
+              </Typography>
+            </Card>
+          </Grid>
+        </Grid>
 
         {/* Table */}
         <Card
@@ -105,13 +123,13 @@ const USAPage = () => {
 
       {/*  USA - States's BarChart */}
       <Container sx={{ marginTop: '3rem', minHeight: '700px' }}>
+        <Title text='All Americans state - Bar Chart' />
         <ErrorBoundary>
           <Card
             sx={{ minHeight: '700px', padding: '1rem' }}
             component={motion.div}
             whileHover={{ outline: '1px solid #1a76d3' }}>
-            <Typography variant='h5'>Cases and Deaths in the last 30 days</Typography>
-            <BarChartUSALast30DaysCases />
+            <BarChartUSALast30Days />
           </Card>
         </ErrorBoundary>
       </Container>

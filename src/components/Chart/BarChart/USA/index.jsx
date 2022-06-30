@@ -12,7 +12,7 @@ import logErrors from '../../../../utility/consoleShortcuts'
 // ChartJs Register
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement);
 
-const BarChartUSALast30DaysCases = () => {
+const BarChartUSALast30Days = () => {
     const [usaStatesLast30DaysCases, setUsaStatesLast30DaysCases] = useState([])
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const BarChartUSALast30DaysCases = () => {
         getData()
     }, [])
 
-    // PieChart - data's configuration
+    // BarChart - data's configuration
     let data = {
         // labels --> continents's name
         labels: usaStatesLast30DaysCases?.map(state => state.state),
@@ -61,11 +61,17 @@ const BarChartUSALast30DaysCases = () => {
             labels: {
                 fontSize: 36
             }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: `USA's states - Cases and Deaths `,
+            },
         }
     }
 
 
-    return (<Bar data={data} style={{ maxHeight: 700 }} options={options} />)
+    return (<Bar data={data} options={options} style={{maxHeight: 700}} />)
 }
 
-export default BarChartUSALast30DaysCases
+export default BarChartUSALast30Days
