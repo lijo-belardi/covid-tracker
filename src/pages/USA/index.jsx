@@ -9,6 +9,7 @@ import UsaStatesTable from '../../components/Table/UsaStatesTable'
 import BarChartUSALast30Days from '../../components/Chart/BarChart/USA'
 import Title from '../../components/Title'
 import Footer from '../../components/Footer'
+import Subtitle from '../../components/Subtitle'
 
 // MUI Components
 import { Container, Grid, Typography, Card, Box } from '@mui/material'
@@ -80,36 +81,14 @@ const USAPage = () => {
       <Container sx={{ marginTop: '3rem' }}>
         {/* Title */}
         <Title text='All Americans state - Table' />
-        {/* Description */}
-
-
-        <Grid container spacing={5}>
-          <Grid item sm={6}>
-            <Card
-              sx={{ padding: '1rem' }}
-              component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
-              <Typography variant='h5' sx={{ marginBottom: '0.5rem' }}>Description</Typography>
-              <Typography align='justify'>
-                In this section, it is possible to view a table with all the USA's states,
-                with the relative number of cases and deaths.
-              </Typography>
-            </Card>
-          </Grid>
-
-          <Grid item sm={6}>
-            <Card
-              sx={{ padding: '1rem' }}
-              component={motion.div}
-              whileHover={{ outline: '1px solid #1a76d3' }}>
-              <Typography variant='h5' sx={{ marginBottom: '0.5rem' }}>Details</Typography>
-              <Typography align='justify'>
-                By clicking on the name of the individual state, you can get more details on the dedicated page.
-              </Typography>
-            </Card>
-          </Grid>
-        </Grid>
-
+        {/* Subtitle */}
+        <Subtitle
+          showDetails={true}
+          description="In this section, it is possible to view a table with all the USA's states,
+          with the relative number of cases and deaths."
+          details="By clicking on the name of the individual state, 
+          you can get more details on the dedicated page."
+        />
         {/* Table */}
         <Card
           sx={{ marginTop: '2rem' }}
