@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 // My Components
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
+import Title from '../../components/Title'
 // Mui Components
 import { Typography, Container, Grid, Card } from '@mui/material'
 // Others import 
@@ -34,7 +35,8 @@ const Country = () => {
         <div>
             <Header />
             <Container className={styles.titleContainer}>
-                <Typography variant='h3'>{country.country} - Covid Situation</Typography>
+                <Typography variant='h3'></Typography>
+                <Title text={`${country.country} - Covid Situation`} />
             </Container>
 
             <Container className={styles.otherInfo}>

@@ -20,7 +20,7 @@ const Continents = () => {
   return (
     <div>
       <Header />
-      <Container sx={{ marginTop: '6rem' }}>
+      <Container sx={{ marginTop: '4rem' }}>
         <Title text='Continents - Covid Situation' />
         <Card
           sx={{ padding: '1rem' }}
