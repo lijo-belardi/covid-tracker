@@ -58,15 +58,15 @@ const LineChartCountryLast30Days = ({ countryName }) => {
             {
                 label: 'Cases',
                 data: casesDateValue?.map(dateValue => dateValue),
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(26, 118, 211)',
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 yAxisID: 'y',
             },
             {
                 label: 'Deaths',
                 data: deathsDateValue?.map(dateValue => dateValue),
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 yAxisID: 'y1',
             }
         ],
