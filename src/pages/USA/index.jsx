@@ -83,11 +83,9 @@ const USAPage = () => {
         <Title text='All Americans state - Table' />
         {/* Subtitle */}
         <Subtitle
-          showDetails={true}
+          showDetails={false}
           description="In this section, it is possible to view a table with all the USA's states,
           with the relative number of cases and deaths."
-          details="By clicking on the name of the individual state, 
-          you can get more details on the dedicated page."
         />
         {/* Table */}
         <Card
