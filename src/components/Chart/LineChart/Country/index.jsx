@@ -82,7 +82,7 @@ const LineChartCountryLast30Days = ({ countryName }) => {
         plugins: {
             title: {
                 display: true,
-                text: `${countryName.toUpperCase()} - Cases and Deaths `,
+                text: `${countryName.toUpperCase()} - Cases and Deaths (last 30 days)`,
             },
         },
         scales: {
