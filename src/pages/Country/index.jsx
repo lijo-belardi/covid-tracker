@@ -5,13 +5,17 @@ import { useParams } from 'react-router-dom'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import Title from '../../components/Title'
+import ErrorBoundary from '../../components/ErrorBoundary'
+import BarChartCountry from '../../components/Chart/BarChart/Country'
 // Mui Components
 import { Typography, Container, Grid, Card } from '@mui/material'
 // Others import 
 import apiClient from '../../apiClient'
 import logErrors from '../../utility/consoleShortcuts'
+import { motion } from 'framer-motion'
 // Styles
 import styles from './index.module.scss'
+import Footer from '../../components/Footer'
 
 const Country = () => {
     let params = useParams()
@@ -21,7 +25,7 @@ const Country = () => {
         async function getCountryDetails() {
             try {
                 const response = await apiClient.get(`/v3/covid-19/countries/${params.country}?strict=true`)
-                //console.log( response.data);
+                console.log(response.data);
                 setCountry(response.data)
             } catch (error) {
                 logErrors(error)
@@ -33,12 +37,15 @@ const Country = () => {
 
     return (
         <div>
+            {/* Header */}
             <Header />
+
+            {/* Title */}
             <Container className={styles.titleContainer}>
-                <Typography variant='h3'></Typography>
                 <Title text={`${country.country} - Covid Situation`} />
             </Container>
 
+            {/* Basic info */}
             <Container className={styles.otherInfo}>
                 <Card className={styles.otherInfoCard}>
                     <Typography variant='h4'>
@@ -55,6 +62,7 @@ const Country = () => {
                 </Card>
             </Container>
 
+            {/* Card Info */}
             <Container>
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={4}>
@@ -80,12 +88,40 @@ const Country = () => {
                 </Grid>
             </Container>
 
+            {/* BarChart */}
+            <Container sx={{ marginTop: '2rem' }}>
+                <Title text='Bar Chart' />
+                {/* Description */}
+                <Card
+                    sx={{ padding: '1rem' }}
+                    component={motion.div}
+                    whileHover={{ outline: '1px solid #1a76d3' }}>
+                    <Typography variant='h5'>Description</Typography>
+                    <Typography align='justify'>
+                        The bar graph shows the total number of cases, deaths, 
+                        and recovered in {country.country}.</Typography>
+                </Card>
 
+                <Card
+                    sx={{ minHeight: '25rem', padding: '1rem', marginTop: '2rem' }}
+                    component={motion.div}
+                    whileHover={{ outline: '1px solid #1a76d3' }}>
+                    <ErrorBoundary>
+                        <BarChartCountry
+                            cases={country.cases}
+                            deaths={country.deaths}
+                            recovered={country.recovered} />
+                    </ErrorBoundary>
+                </Card>
+            </Container>
 
 
             <Container>
                 {/* TODO LineChart last30days (cases + deaths) */}
             </Container>
+
+            {/* Footer */}
+            <Footer />
         </div>
     )
 }
