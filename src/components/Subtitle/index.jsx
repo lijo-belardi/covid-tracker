@@ -13,7 +13,7 @@ const Subtitle = ({ description, details, showDetails }) => {
     return (
         <>
             {isDetails ? (
-                <Grid container spacing={5}>
+                <Grid container spacing={[3, 5]}>
                     <Grid item xs={12} sm={6}>
                         <Card
                             sx={{ padding: '1rem' }}
