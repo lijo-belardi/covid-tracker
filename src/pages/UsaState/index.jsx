@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom'
 import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import Title from '../../components/Title'
+import BarChartUSAStates from '../../components/Chart/BarChart/USAState'
+import ErrorBoundary from '../../components/ErrorBoundary'
 // MUI Components
-import { Container, Grid, Typography } from '@mui/material'
+import { Container, Grid, Typography, Card } from '@mui/material'
 // Others import 
 import apiClient from '../../apiClient'
 
@@ -21,6 +23,7 @@ const UsaStatePage = () => {
             try {
                 const response = await apiClient.get(`https://disease.sh/v3/covid-19/states/${(params.state).toLowerCase()}`)
                 setData(response.data)
+                
             } catch (error) {
                 console.log(error.name);
             }
@@ -77,6 +80,17 @@ const UsaStatePage = () => {
                 </Grid>
             </Container>
 
+            <Container sx={{ marginTop: '2rem' }}>
+                <Grid container spacing={3}>
+                    <Grid item sm={12}>
+                        <Card sx={{ padding: '1rem' }}>
+                            <ErrorBoundary>
+                                <BarChartUSAStates cases={data.cases} deaths={data.deaths} />
+                            </ErrorBoundary>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Container>
             {/* TODO bar con tutte le contee 
             usare le props */}
 
