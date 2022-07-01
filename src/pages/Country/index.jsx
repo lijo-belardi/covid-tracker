@@ -111,7 +111,7 @@ const Country = () => {
                     description={`The Line graph shows the total number of 
                     cases and deaths in ${country.country} in the last 30 days.`} />
                 <Card
-                    sx={{ minHeight: '25rem', padding: '1rem', marginTop: '2rem' }}
+                    sx={{ minHeight: [ '12rem', '20rem', '25rem'], padding: '1rem', marginTop: '2rem' }}
                     component={motion.div}
                     whileHover={{ outline: '1px solid #1a76d3' }}>
                     <ErrorBoundary>
