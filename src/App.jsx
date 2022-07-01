@@ -1,24 +1,20 @@
 // React
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// Pages
-import Home from "./pages/Home";
-import Continents from './pages/Continents';
-import Country from './pages/Country';
-import USAPage from './pages/USA';
+import { BrowserRouter as Router } from 'react-router-dom'
+// My Components
+import Header from './components/Header';
+import Footer from './components/Footer';
 // Contexts
 import { AllGlobalDataProvider } from "./context/AllGlobalData";
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
   return (
     <AllGlobalDataProvider>
       <Router>
         <div className="App">
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/continents' element={<Continents />} />    
-            <Route path='/countries/usa' element={<USAPage />} />
-            <Route path='/countries/:country' element={<Country />} />
-          </Routes>
+          <Header />
+          <AnimatedRoutes />
+          <Footer />
         </div>
       </Router>
     </AllGlobalDataProvider>

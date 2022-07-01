@@ -1,20 +1,21 @@
 import React from 'react'
-// components
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-// components/Sections
+// MY Componets: components/Sections
 import ErrorBoundary from '../../components/ErrorBoundary'
 import AllDataSection from '../../components/Sections/AllDataSection'
 import ContinentsSection from '../../components/Sections/ContinentsSection'
 import Last30DaysSection from '../../components/Sections/Last30DaysSection'
 import AllCountries from '../../components/Sections/AllCountries'
+// Others import
+import { motion } from 'framer-motion'
 
 const Home = () => {
   return (
-    <div>
-      <ErrorBoundary>
-        <Header />
-      </ErrorBoundary>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1.6 } }}
+      exit={{ opacity: 0 }}
+    >
+
 
       <ErrorBoundary>
         {/* TODO aggiungere animazioni */}
@@ -35,10 +36,7 @@ const Home = () => {
         <AllCountries />
       </ErrorBoundary>
 
-      <ErrorBoundary>
-        <Footer />
-      </ErrorBoundary>
-    </div>
+    </motion.div>
   )
 }
 

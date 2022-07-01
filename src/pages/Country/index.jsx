@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // My Components
-import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import Title from '../../components/Title'
 import Subtitle from '../../components/Subtitle'
@@ -17,7 +16,6 @@ import logErrors from '../../utility/consoleShortcuts'
 import { motion } from 'framer-motion'
 // Styles
 import styles from './index.module.scss'
-import Footer from '../../components/Footer'
 
 const Country = () => {
     let params = useParams()
@@ -36,9 +34,11 @@ const Country = () => {
     }, [params.country])
 
     return (
-        <div>
-            {/* Header */}
-            <Header />
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1.6 } }}
+            exit={{ opacity: 0 }}>
+            
 
             {/* Title */}
             <Container className={styles.titleContainer}>
@@ -120,9 +120,7 @@ const Country = () => {
                 </Card>
             </Container>
 
-            {/* Footer */}
-            <Footer />
-        </div>
+        </motion.div>
     )
 }
 

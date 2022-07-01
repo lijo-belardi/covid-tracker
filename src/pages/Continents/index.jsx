@@ -1,10 +1,8 @@
 import React from 'react'
 // My components
-import Header from '../../components/Header'
 import Title from '../../components/Title'
 import useApiClient from '../../hooks/useApiClient'
 import ErrorBoundary from '../../components/ErrorBoundary'
-import Footer from '../../components/Footer'
 import ContinentsBarChart from '../../components/Chart/BarChart/Continents'
 import NestedList from '../../components/List'
 import Subtitle from '../../components/Subtitle'
@@ -19,8 +17,12 @@ import requests from '../../apiClient/requests'
 const Continents = () => {
   const { data: continents } = useApiClient(requests.continentsData)
   return (
-    <div>
-      <Header />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1.6 } }}
+      exit={{ opacity: 0 }}>
+    
+    
       <Container sx={{ marginTop: '4rem' }}>
         <Title text='Continents - Covid Situation' />
         <Subtitle
@@ -79,9 +81,7 @@ const Continents = () => {
           </ErrorBoundary>
         </Card>
       </Container>
-
-      <Footer />
-    </div>
+    </motion.div>
   )
 }
 

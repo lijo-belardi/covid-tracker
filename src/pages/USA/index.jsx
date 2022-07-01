@@ -2,17 +2,15 @@
 import React from 'react'
 // My Components
 import ErrorBoundary from '../../components/ErrorBoundary'
-import Header from '../../components/Header'
 import CardInfo from '../../components/CardInfo'
 import LineChartUSALast30DaysData from '../../components/Chart/LineChart/USA/Last30Days'
 import UsaStatesTable from '../../components/Table/UsaStatesTable'
 import BarChartUSALast30Days from '../../components/Chart/BarChart/USA'
 import Title from '../../components/Title'
-import Footer from '../../components/Footer'
 import Subtitle from '../../components/Subtitle'
 
 // MUI Components
-import { Container, Grid, Typography, Card, Box } from '@mui/material'
+import { Container, Grid, Typography, Card } from '@mui/material'
 // Others import
 import useApiClient from '../../hooks/useApiClient'
 import requests from '../../apiClient/requests'
@@ -23,12 +21,15 @@ import { motion } from 'framer-motion'
 
 
 const USAPage = () => {
-  const { data: country, loading, error } = useApiClient(requests.usaData)
+  const { data: country, loading } = useApiClient(requests.usaData)
 
   return (
-    <div>
-      {/* Header */}
-      <Header />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1.6 } }}
+      exit={{ opacity: 0 }}>
+
+
 
       {/* Title */}
       <Container className={styles.titleContainer}>
@@ -110,8 +111,8 @@ const USAPage = () => {
           </Card>
         </ErrorBoundary>
       </Container>
-      <Footer />
-    </div>
+
+    </motion.div>
   )
 }
 
