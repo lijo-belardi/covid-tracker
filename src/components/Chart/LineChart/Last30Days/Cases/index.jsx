@@ -30,8 +30,23 @@ const LineChartAllLast30DaysCases = () => {
         ]
     };
 
+    // BarChart - options's configuration
     let options = {
-        responsive: true
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                display: false
+            },
+            title: {
+                display: true,
+                padding: 10,
+                text: 'Cases',
+                font: {
+                    size: 18
+                }
+            }
+        }
     }
 
     useEffect(() => {

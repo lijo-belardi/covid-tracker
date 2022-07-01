@@ -30,20 +30,39 @@ const LineChartAllLast30DaysDeaths = () => {
         ]
     };
 
+    // BarChart - options's configuration
+    let options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                display: false
+            },
+            title: {
+                display: true,
+                padding: 10,
+                text: 'Deaths',
+                font: {
+                    size: 18
+                }
+            }
+        }
+    }
+
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
         try {
-            const response = await apiClient.get(requests.last30DaysData)            
+            const response = await apiClient.get(requests.last30DaysData)
             setDeaths(response.data.deaths)
         } catch (error) {
             logErrors(error)
         }
     }
 
-    return (<Line data={data} style={{ maxHeight: 400 }} />)
+    return (<Line data={data} options={options} style={{ maxHeight: 400 }} />)
 }
 
 export default LineChartAllLast30DaysDeaths

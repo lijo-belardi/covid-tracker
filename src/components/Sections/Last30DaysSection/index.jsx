@@ -21,7 +21,6 @@ const Last30DaysSection = () => {
                     <Card className={styles.lineChartCard}
                         component={motion.div}
                         whileHover={{ outline: '1px solid #1a76d3' }}>
-                        <Typography variant='h5' sx={{ textAlign: ['center', 'left'] }}>Cases</Typography>
                         <LineChartAllLast30DaysCases />
                     </Card>
                 </Grid>
@@ -30,7 +29,6 @@ const Last30DaysSection = () => {
                     <Card className={styles.lineChartCard}
                         component={motion.div}
                         whileHover={{ outline: '1px solid #1a76d3' }}>
-                        <Typography variant='h5' sx={{ textAlign: ['center', 'left'] }}>Deaths</Typography>
                         <LineChartAllLast30DaysDeaths />
                     </Card>
                 </Grid>
