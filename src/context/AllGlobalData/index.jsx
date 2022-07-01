@@ -7,7 +7,6 @@ export const AllGlobalDataContext = createContext()
 
 export const AllGlobalDataProvider = (props) => {
     const [globalData, setGlobalData] = useState([])
-    /*  TODO valutare uso del custom hook */
     useEffect(() => {
         getGlobalData()
     }, [])

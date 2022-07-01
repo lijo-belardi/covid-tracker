@@ -20,8 +20,6 @@ const ContinentsSection = () => {
             {/* Title */}
             <Title text='Continents' />
 
-
-            {/* TODO Link ad ogni continente */}
             {/* Grid */}
             <Grid container spacing={2}>
                 {/* Grid - Table */}
