@@ -33,7 +33,7 @@ const BarChartCountry = ({ cases, deaths, recovered }) => {
         }
     ]
     }
-
+    
     // BarChart - options's configuration
     let options = {
         responsive: true,
@@ -43,9 +43,12 @@ const BarChartCountry = ({ cases, deaths, recovered }) => {
                 beginAtZero: true
             }
         },
-        legends: {
-            labels: {
-                fontSize: 36
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 10
+                }
             }
         }
     }
