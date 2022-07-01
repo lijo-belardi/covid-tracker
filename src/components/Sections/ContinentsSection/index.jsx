@@ -33,7 +33,7 @@ const ContinentsSection = () => {
 
                 {/* Grid - BarChart */}
                 <Grid item xs={12} md={6} lg={8}>
-                    <Card sx={{ minHeight: '100%', padding: '0.5rem' }}
+                    <Card sx={{ minHeight: ['21.875rem','100%'], padding: '0.5rem' }}
                         component={motion.div}
                         whileHover={{ outline: '1px solid #1a76d3' }}>
                         <ContinentsBarChart />
