@@ -39,7 +39,6 @@ const LineChartCountryLast30Days = ({ countryName }) => {
         async function getLast30DaysData() {
             try {
                 const response = await apiClient.get(`/v3/covid-19/historical/${countryName}?lastdays=30`)
-                console.log(response.data);
                 setCases(response.data.timeline.cases)
                 setDeaths(response.data.timeline.deaths)
             } catch (error) {
@@ -48,9 +47,6 @@ const LineChartCountryLast30Days = ({ countryName }) => {
         }
         getLast30DaysData()
     }, [countryName])
-
-
-
 
     const data = {
         labels: dates.map(singleDay => singleDay),
