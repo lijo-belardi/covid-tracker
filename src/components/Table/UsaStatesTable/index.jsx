@@ -1,10 +1,7 @@
 // React
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
 // MUI Components
 import { Typography } from '@mui/material';
-
 // MUI Table
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -13,18 +10,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
 // Others import
 import apiClient from '../../../apiClient';
 import logErrors from '../../../utility/consoleShortcuts'
 import requests from '../../../apiClient/requests';
 import millify from 'millify'
-import { motion } from 'framer-motion';
-
 
 const UsaStatesTable = () => {
     const [states, setStates] = useState([])
-    const navigate = useNavigate()
+    
     useEffect(() => {
         getData()
     }, [])
@@ -49,6 +43,8 @@ const UsaStatesTable = () => {
                             <TableCell align='left' sx={{ fontWeight: 'bold' }}>State</TableCell>
                             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Cases</TableCell>
                             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Deaths</TableCell>
+                            <TableCell align="right" sx={{ fontWeight: 'bold' }}>Today Cases</TableCell>
+                            <TableCell align="right" sx={{ fontWeight: 'bold' }}>Today Deaths</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -58,18 +54,15 @@ const UsaStatesTable = () => {
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 {/* State - name */}
-                                <TableCell align="center">
-                                    <Typography
-                                        sx={{ maxWidth: 'fit-content' }}
-                                        component={motion.div}
-                                        whileHover={{ backgroundColor: '#1a76d3', color: '#FAF8FF', cursor: 'pointer' }}
-                                        onClick={() => navigate(`/countries/usa/${state.state}`)}>
-                                        {state.state}</Typography>
+                                <TableCell>
+                                    <Typography>{state.state}</Typography>
                                 </TableCell>
                                 {/* State - cases */}
                                 <TableCell align="center">{millify(state.cases)}</TableCell>
                                 {/* State - deaths */}
                                 <TableCell align="center">{millify(state.deaths)}</TableCell>
+                                <TableCell align="right">{millify(state.todayCases)}</TableCell>
+                                <TableCell align="right">{millify(state.todayDeaths)}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
