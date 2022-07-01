@@ -21,8 +21,8 @@ const Continents = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 1.6 } }}
       exit={{ opacity: 0 }}>
-    
-    
+
+      {/* Continents - Title */}
       <Container sx={{ marginTop: '4rem' }}>
         <Title text='Continents - Covid Situation' />
         <Subtitle
@@ -30,6 +30,7 @@ const Continents = () => {
           description="In this section, you can view the 
           details on the individual continents." />
 
+        {/*  Continents - List */}
         <Grid container spacing={2} sx={{ marginTop: '1rem' }}>
           {continents &&
             continents?.map(continent => (
@@ -58,10 +59,11 @@ const Continents = () => {
         </Grid>
       </Container>
 
+      {/* Continents - BarChart */}
       <Container sx={{ marginTop: '2rem', minHeight: '500px' }}>
         <Title text='Continents - Bar Chart' />
         <Card
-          sx={{ height: '500px', padding: '1rem' }}
+          sx={{ height: ['350px', '400px', '450px'], padding: '1rem' }}
           component={motion.div}
           whileHover={{ outline: '1px solid #1a76d3' }}>
           <ErrorBoundary>
@@ -70,6 +72,7 @@ const Continents = () => {
         </Card>
       </Container>
 
+      {/* Continents - RadarChart */}
       <Container sx={{ marginTop: '2rem', minHeight: '400px' }}>
         <Title text='Continents - Radar Chart' />
         <Card
