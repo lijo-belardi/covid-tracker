@@ -18,7 +18,6 @@ import ContinentsRadarChart from '../../components/Chart/Radar/Continents'
 /* TODO Aggiungere commenti */
 const Continents = () => {
   const { data: continents, loading } = useApiClient('/v3/covid-19/continents')
-  console.log(continents);
   return (
     <div>
       <Header />
@@ -59,7 +58,10 @@ const Continents = () => {
 
       <Container sx={{ marginTop: '2rem', minHeight: '500px' }}>
         <Title text='Continents - Bar Chart' />
-        <Card sx={{ height: '500px', padding: '1rem' }}>
+        <Card
+          sx={{ height: '500px', padding: '1rem' }}
+          component={motion.div}
+          whileHover={{ outline: '1px solid #1a76d3' }}>
           <ErrorBoundary>
             <ContinentsBarChart />
           </ErrorBoundary>
@@ -68,7 +70,10 @@ const Continents = () => {
 
       <Container sx={{ marginTop: '2rem', minHeight: '400px' }}>
         <Title text='Continents - Radar Chart' />
-        <Card sx={{ minHeight: '400px', padding: '1rem' }}>
+        <Card
+          sx={{ minHeight: '400px', padding: '1rem' }}
+          component={motion.div}
+          whileHover={{ outline: '1px solid #1a76d3' }}>
           <ErrorBoundary>
             <ContinentsRadarChart />
           </ErrorBoundary>
