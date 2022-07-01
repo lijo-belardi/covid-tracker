@@ -7,6 +7,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 // Others import
 import apiClient from '../../../../../apiClient'
 import logErrors from '../../../../../utility/consoleShortcuts'
+import requests from '../../../../../apiClient/requests'
 
 
 // ChartJs Register
@@ -35,7 +36,7 @@ const LineChartAllLast30DaysDeaths = () => {
 
     const getData = async () => {
         try {
-            const response = await apiClient.get('/v3/covid-19/historical/all?lastdays=30')            
+            const response = await apiClient.get(requests.last30DaysData)            
             setDeaths(response.data.deaths)
         } catch (error) {
             logErrors(error)
