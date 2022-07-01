@@ -65,8 +65,18 @@ const BarChartUSALast30Days = () => {
         plugins: {
             title: {
                 display: true,
+                padding: 18.5,
                 text: `USA's states - Cases and Deaths `,
+                font: {
+                    size: 18
+                }
             },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 10
+                }
+            }
         }
     }
 
