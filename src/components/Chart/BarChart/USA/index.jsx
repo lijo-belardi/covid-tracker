@@ -81,7 +81,7 @@ const BarChartUSALast30Days = () => {
     }
 
 
-    return (<Bar data={data} options={options} style={{maxHeight: 700}} />)
+    return (<Bar data={data} options={options} style={{ maxHeight: 700 }} />)
 }
 
 export default BarChartUSALast30Days
