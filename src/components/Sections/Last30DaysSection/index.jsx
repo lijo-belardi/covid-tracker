@@ -21,16 +21,16 @@ const Last30DaysSection = () => {
                     <Card className={styles.lineChartCard}
                         component={motion.div}
                         whileHover={{ outline: '1px solid #1a76d3' }}>
-                        <Typography variant='h5'>Cases</Typography>
+                        <Typography variant='h5' sx={{ textAlign: ['center', 'left'] }}>Cases</Typography>
                         <LineChartAllLast30DaysCases />
                     </Card>
                 </Grid>
-                
+
                 <Grid item xs={12} lg={6}>
                     <Card className={styles.lineChartCard}
                         component={motion.div}
                         whileHover={{ outline: '1px solid #1a76d3' }}>
-                        <Typography variant='h5'>Deaths</Typography>
+                        <Typography variant='h5' sx={{ textAlign: ['center', 'left'] }}>Deaths</Typography>
                         <LineChartAllLast30DaysDeaths />
                     </Card>
                 </Grid>
