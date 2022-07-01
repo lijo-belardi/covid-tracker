@@ -15,15 +15,13 @@ function App() {
         <div className="App">
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/continents' element={<Continents />} />
-            {/* TODO Route per i singoli continent continenti */}          
+            <Route path='/continents' element={<Continents />} />    
             <Route path='/countries/usa' element={<USAPage />} />
             <Route path='/countries/:country' element={<Country />} />
           </Routes>
         </div>
       </Router>
     </AllGlobalDataProvider>
-
   );
 }
 
