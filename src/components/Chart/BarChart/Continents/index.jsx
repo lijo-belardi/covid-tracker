@@ -69,6 +69,14 @@ const ContinentsBarChart = () => {
             labels: {
                 fontSize: 36
             }
+        },
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 10
+                }
+            }   
         }
     }
     return (<Bar data={data} style={{ maxHeight: 400 }} options={options} />)
