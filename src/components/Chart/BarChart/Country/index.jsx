@@ -1,14 +1,9 @@
 // React
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 // React-Chartjs-2
 import { Bar } from 'react-chartjs-2';
 // Chart.js
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
-// Others import
-import apiClient from '../../../../apiClient'
-import requests from '../../../../apiClient/requests'
-import logErrors from '../../../../utility/consoleShortcuts'
-
 // ChartJs Register
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 

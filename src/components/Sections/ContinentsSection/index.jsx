@@ -5,7 +5,7 @@ import ContinentsBarChart from '../../Chart/BarChart/Continents'
 import ContinentsTable from '../../Table/ContinentsTable'
 import Title from '../../Title'
 // Mui components
-import { Container, Typography, Grid, Card } from '@mui/material'
+import { Container, Grid, Card } from '@mui/material'
 // Style
 import styles from './index.module.scss'
 // Others import 

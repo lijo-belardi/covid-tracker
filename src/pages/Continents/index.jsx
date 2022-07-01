@@ -17,7 +17,7 @@ import requests from '../../apiClient/requests'
 
 /* TODO Aggiungere commenti */
 const Continents = () => {
-  const { data: continents, loading } = useApiClient(requests.continentsData)
+  const { data: continents } = useApiClient(requests.continentsData)
   return (
     <div>
       <Header />

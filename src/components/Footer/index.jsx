@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // MUI Components
 import { Container, Grid, Box, Typography } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -23,7 +23,7 @@ const Footer = () => {
             <Typography
               variant='h5'
               align='center'
-              sx={{ borderBottom: '1px solid #FAF8FF', marginBottom: '0.5rem' }}
+              sx={{ borderBottom: '1px solid #FAF8FF', marginBottom: '0.5rem', padding: '0.5rem' }}
             >
               Pages
             </Typography>
@@ -57,7 +57,7 @@ const Footer = () => {
             <Typography
               variant='h5'
               align='center'
-              sx={{ borderBottom: '1px solid #FAF8FF', marginBottom: '0.5rem' }}
+              sx={{ borderBottom: '1px solid #FAF8FF', marginBottom: '0.5rem', padding: '0.5rem' }}
             >
               Contacts
             </Typography>
