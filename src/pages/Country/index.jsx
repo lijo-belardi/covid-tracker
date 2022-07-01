@@ -46,8 +46,11 @@ const Country = () => {
             </Container>
 
             {/* Basic info */}
-            <Container className={styles.otherInfo}>
-                <Card className={styles.otherInfoCard}>
+            <Container sx={{ marginTop: '2rem' }}>
+                <Card
+                    sx={{ padding: '1rem' }}
+                    component={motion.div}
+                    whileHover={{ outline: '1px solid #1a76d3' }}>
                     <Typography variant='h4'>Information</Typography>
                     <Typography variant='h6'>Continent: {country.continent}</Typography>
                     <Typography variant='h6'>Population: {country.population}</Typography>
