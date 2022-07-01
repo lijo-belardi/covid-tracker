@@ -40,7 +40,7 @@ const BarChartUSALast30Days = () => {
         },
         {
             label: 'Deaths',
-            backgroundColor: '#d32f2f',
+            backgroundColor: 'rgb(255, 99, 132)',
             // data --> numbers of cases 
             data: usaStatesLast30DaysCases?.map(state => state.deaths),
             borderWidth: 1

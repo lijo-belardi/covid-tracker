@@ -41,7 +41,7 @@ const ContinentsBarChart = () => {
         },
         {
             label: 'Deaths',
-            backgroundColor: 'rgb(211, 47, 48, 0.8)',
+            backgroundColor: 'rgb(255, 99, 132',
             // data --> numbers of cases 
             data: continentsData?.map(continent => continent.deaths),
             borderWidth: 1

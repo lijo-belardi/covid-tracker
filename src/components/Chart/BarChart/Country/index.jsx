@@ -24,7 +24,7 @@ const BarChartCountry = ({ cases, deaths, recovered }) => {
         },
         {
             label: 'Deaths',
-            backgroundColor: '#d32f2f',
+            backgroundColor: 'rgb(255, 99, 132)',
             // data --> numbers of deaths 
             data: { deaths },
             borderWidth: 1
