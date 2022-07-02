@@ -72,6 +72,14 @@ const ContinentsRadarChart = () => {
             labels: {
                 fontSize: 36
             }
+        },
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 10
+                }
+            }   
         }
     }
     return (<Radar data={data} style={{ maxHeight: 400 }} options={options} />)
