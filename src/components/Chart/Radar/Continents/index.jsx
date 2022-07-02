@@ -37,21 +37,21 @@ const ContinentsRadarChart = () => {
         labels: continentsData?.map(continent => continent.continent),
         datasets: [{
             label: 'Cases',
-            backgroundColor: 'rgb(26, 118, 211, 0.8)',
+            backgroundColor: 'rgba(26, 118, 211, 0.55)',
             // data --> numbers of cases 
             data: continentsData?.map(continent => continent.cases),
             borderWidth: 1
         },
         {
             label: 'Deaths',
-            backgroundColor: 'rgb(211, 47, 48, 0.8)',
+            backgroundColor: 'rgb(211, 47, 48, 0.55)',
             // data --> numbers of deaths 
             data: continentsData?.map(continent => continent.deaths),
             borderWidth: 1
         },
         {
             label: 'Recovered',
-            backgroundColor: 'rgb(129, 199, 132, 0.8)',
+            backgroundColor: 'rgb(129, 199, 132, 0.55)',
             // data --> numbers of recovered 
             data: continentsData?.map(continent => continent.recovered),
             borderWidth: 1
