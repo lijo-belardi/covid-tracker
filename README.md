@@ -1,5 +1,6 @@
 # Covid-tracker-project
 
+## Description
 This is the final project for the **junior frontend developer path** from **Start2Impact**, 
 and it consists of a multipage web app for tracking Covid’s global situation.
 
