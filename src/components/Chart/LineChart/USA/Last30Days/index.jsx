@@ -73,6 +73,12 @@ const LineChartUSALast30DaysData = () => {
                 display: true,
                 text: 'USA - Cases and Deaths',
             },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 10
+                }
+            }   
         },
         scales: {
             y: {
@@ -88,7 +94,7 @@ const LineChartUSALast30DaysData = () => {
                     drawOnChartArea: false,
                 },
             },
-        },
+        }
     };
 
     return (<Line data={data} options={options}  />)
