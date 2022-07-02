@@ -8,5 +8,3 @@ const requests = {
     usaStates: '/v3/covid-19/states?sort=cases'
 }
 export default requests
-
-/* TODO cambiare tutte le chiamate */

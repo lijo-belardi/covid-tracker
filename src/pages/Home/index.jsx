@@ -15,20 +15,15 @@ const Home = () => {
       animate={{ opacity: 1, transition: { duration: 1.6 } }}
       exit={{ opacity: 0 }}
     >
-
-
       <ErrorBoundary>
-        {/* TODO aggiungere animazioni */}
         <AllDataSection />
       </ErrorBoundary>
 
       <ErrorBoundary>
-        {/* TODO aggiungere animazioni */}
         <ContinentsSection />
       </ErrorBoundary>
 
       <ErrorBoundary>
-        {/* TODO aggiungere animazioni */}
         <Last30DaysSection />
       </ErrorBoundary>
 

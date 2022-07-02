@@ -13,7 +13,6 @@ import { motion } from 'framer-motion'
 import ContinentsRadarChart from '../../components/Chart/Radar/Continents'
 import requests from '../../apiClient/requests'
 
-/* TODO Aggiungere commenti */
 const Continents = () => {
   const { data: continents } = useApiClient(requests.continentsData)
   return (
