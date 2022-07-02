@@ -1,3 +1,19 @@
+# Covid-tracker-project
+
+This is the final project for the **junior frontend developer path** from **Start2Impact**, 
+and it consists of a multipage web app for tracking Covid’s global situation.
+
+## Pages
+**Home**: you can view the global situation and click on the country’s name for more details.
+
+**Continents**: you can view the Covid situation about the six continents.
+
+**USA**: you can view the Covid situation about USA and a table with all the states.
+
+**Italy**: you can view the Covid situation about Italy.
+
+
+
 ## Link
 ### Website: [covid19-global-tracker-project](https://covid19-global-tracker-project.netlify.app/)
 
