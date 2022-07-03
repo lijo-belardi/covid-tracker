@@ -18,6 +18,16 @@ and it consists of a multipage web app for tracking Covid’s global situation.
 ## Link
 ### Website: [covid19-global-tracker-project](https://covid19-global-tracker-project.netlify.app/)
 
+## Screenshot
+### Home
+![App Screenshot](/src/assets/img/covid-global-situation-screenshot.png)
+
+### Continents 
+![App Screenshot](src/assets/img/covid-continents-situation-screenshot.png)
+
+### Americans state
+![App Screenshot](src/assets/img/covid-all-americans-state-situation-screenshot.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
