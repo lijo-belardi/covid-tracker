@@ -124,6 +124,7 @@ npm start
 ## Built with
 - [Axios](https://github.com/axios/axios)
 - [Chartjs](https://www.chartjs.org/)
+- [Framer-motion](https://www.framer.com/motion/)
 - [MUI](https://mui.com/)
 - [React](https://it.reactjs.org/)
 - [React Chartjs-2](https://react-chartjs-2.js.org/)
