@@ -131,3 +131,25 @@ npm start
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Router](https://reactrouter.com/)
 - [Sass](https://sass-lang.com/)
+
+## API Reference
+
+| Documentation | Link                                                               |
+| :------------ | :----------------------------------------------------------------- |
+| Disease.sh    | [API - docs](https://disease.sh/docs/#/)        |
+
+
+## Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://lijo-belardi.github.io/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lijo-belardi-25615918b/)
+
+
+## Acknowledgements
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+ - [Disease](https://disease.sh/docs/#/)
+
+ ## License
+[![GitHub license](https://img.shields.io/github/license/lijo-belardi/covid-tracker?style=for-the-badge)](https://github.com/lijo-belardi/covid-tracker/blob/master/LICENSE)
