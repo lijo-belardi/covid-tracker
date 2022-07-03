@@ -98,3 +98,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Getting Started with my project
+
+If you want to download the project locally and check that it works correctly, you need to do a series of steps.
+
+Open the project in your code editor.
+
+1. create an ".env" file and insert this: 
+ ```
+REACT_APP_BASE_URL=https://disease.sh
+```
+
+3. Install project's dependecies with:
+```
+npm install
+```
+3. Run the app in the development mode with this command:
+```
+npm start
+```
+
+
+## Built with
+- [Axios](https://github.com/axios/axios)
+- [Chartjs](https://www.chartjs.org/)
+- [MUI](https://mui.com/)
+- [React](https://it.reactjs.org/)
+- [React Chartjs-2](https://react-chartjs-2.js.org/)
+- [React Context API](https://reactjs.org/docs/context.html#api)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [React Router](https://reactrouter.com/)
+- [Sass](https://sass-lang.com/)
